@@ -41,12 +41,12 @@ Security
 -  After 3 authentication failures on the user API, the end-user have to
    unlock his account by using the login form
 
-.. warning:: Since Kanboard v1.2.8, people with two-factor authentication enabled must use API keys.
+
 
 Protocol
 --------
 
-Kanboard uses the protocol Json-RPC to interact with external programs.
+We uses the protocol Json-RPC to interact with external programs.
 
 JSON-RPC is a remote procedure call protocol encoded in JSON. Almost the
 same thing as XML-RPC but with the JSON format.
@@ -55,6 +55,6 @@ We use the `version 2 of the
 protocol <http://www.jsonrpc.org/specification>`__. You must call the
 API with a ``POST`` HTTP request.
 
-Kanboard support batch requests, so you can make multiple API calls in a
+Support batch requests, so you can make multiple API calls in a
 single HTTP request. It’s particularly useful for mobile clients with
 higher network latency.

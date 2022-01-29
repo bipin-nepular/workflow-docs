@@ -1,7 +1,7 @@
 API Authentication
 ==================
 
-.. warning:: Since Kanboard v1.2.8, people with two-factor authentication enabled must use API keys.
+.. warning:: people with two-factor authentication enabled must use API keys.
 
 API endpoint
 ------------
@@ -48,7 +48,7 @@ Configuration:
     curl \
     -H 'X-API-Auth: anNvbnJwYzoxOWZmZDk3MDlkMDNjZTUwNjc1YzNhNDNkMWM0OWMxYWMyMDdmNGJjNDVmMDZjNWIyNzAxZmJkZjg5Mjk=' \
     -d '{"jsonrpc": "2.0", "method": "getAllProjects", "id": 1}' \
-    http://localhost/kanboard/jsonrpc.php
+    http://localhost/workflow/jsonrpc.php
 
 Authentication error
 --------------------

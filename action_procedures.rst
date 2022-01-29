@@ -27,24 +27,24 @@ Response example:
         "jsonrpc": "2.0",
         "id": 1217735483,
         "result": {
-            "\Kanboard\Action\TaskLogMoveAnotherColumn": "Add a comment logging moving the task between columns",
-            "\Kanboard\Action\TaskAssignColorUser": "Assign a color to a specific user",
-            "\Kanboard\Action\TaskAssignColorColumn": "Assign a color when the task is moved to a specific column",
-            "\Kanboard\Action\TaskAssignCategoryColor": "Assign automatically a category based on a color",
-            "\Kanboard\Action\TaskAssignColorCategory": "Assign automatically a color based on a category",
-            "\Kanboard\Action\TaskAssignSpecificUser": "Assign the task to a specific user",
-            "\Kanboard\Action\TaskAssignCurrentUser": "Assign the task to the person who does the action",
-            "\Kanboard\Action\TaskUpdateStartDate": "Automatically update the start date",
-            "\Kanboard\Action\TaskAssignUser": "Change the assignee based on an external username",
-            "\Kanboard\Action\TaskAssignCategoryLabel": "Change the category based on an external label",
-            "\Kanboard\Action\TaskClose": "Close a task",
-            "\Kanboard\Action\CommentCreation": "Create a comment from an external provider",
-            "\Kanboard\Action\TaskCreation": "Create a task from an external provider",
-            "\Kanboard\Action\TaskDuplicateAnotherProject": "Duplicate the task to another project",
-            "\Kanboard\Action\TaskMoveColumnAssigned": "Move the task to another column when assigned to a user",
-            "\Kanboard\Action\TaskMoveColumnUnAssigned": "Move the task to another column when assignee is cleared",
-            "\Kanboard\Action\TaskMoveAnotherProject": "Move the task to another project",
-            "\Kanboard\Action\TaskOpen": "Open a task"
+            "\Workflow\Action\TaskLogMoveAnotherColumn": "Add a comment logging moving the task between columns",
+            "\Workflow\Action\TaskAssignColorUser": "Assign a color to a specific user",
+            "\Workflow\Action\TaskAssignColorColumn": "Assign a color when the task is moved to a specific column",
+            "\Workflow\Action\TaskAssignCategoryColor": "Assign automatically a category based on a color",
+            "\Workflow\Action\TaskAssignColorCategory": "Assign automatically a color based on a category",
+            "\Workflow\Action\TaskAssignSpecificUser": "Assign the task to a specific user",
+            "\Workflow\Action\TaskAssignCurrentUser": "Assign the task to the person who does the action",
+            "\Workflow\Action\TaskUpdateStartDate": "Automatically update the start date",
+            "\Workflow\Action\TaskAssignUser": "Change the assignee based on an external username",
+            "\Workflow\Action\TaskAssignCategoryLabel": "Change the category based on an external label",
+            "\Workflow\Action\TaskClose": "Close a task",
+            "\Workflow\Action\CommentCreation": "Create a comment from an external provider",
+            "\Workflow\Action\TaskCreation": "Create a task from an external provider",
+            "\Workflow\Action\TaskDuplicateAnotherProject": "Duplicate the task to another project",
+            "\Workflow\Action\TaskMoveColumnAssigned": "Move the task to another column when assigned to a user",
+            "\Workflow\Action\TaskMoveColumnUnAssigned": "Move the task to another column when assignee is cleared",
+            "\Workflow\Action\TaskMoveAnotherProject": "Move the task to another project",
+            "\Workflow\Action\TaskOpen": "Open a task"
         }
     }
 
@@ -115,7 +115,7 @@ Request example:
         "method": "getCompatibleActionEvents",
         "id": 899370297,
         "params": [
-            "\\Kanboard\\Action\\TaskClose"
+            "\\Workflow\\Action\\TaskClose"
         ]
     }
 
@@ -172,7 +172,7 @@ Response example:
                 "id" : "13",
                 "project_id" : "2",
                 "event_name" : "task.move.column",
-                "action_name" : "\Kanboard\Action\TaskAssignSpecificUser",
+                "action_name" : "\Workflow\Action\TaskAssignSpecificUser",
                 "params" : {
                     "column_id" : "5",
                     "user_id" : "1"
@@ -206,7 +206,7 @@ Request example:
         "params": {
             "project_id" : "2",
             "event_name" : "task.move.column",
-            "action_name" : "\\Kanboard\\Action\\TaskAssignSpecificUser",
+            "action_name" : "\\Workflow\\Action\\TaskAssignSpecificUser",
             "params" : {
                 "column_id" : "3",
                 "user_id" : "2"
