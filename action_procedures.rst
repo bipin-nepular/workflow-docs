@@ -1,7 +1,7 @@
 Automatic Actions API Procedures
 ================================
 
-getAvailableActions
+GET: /automatic/availableactions
 -------------------
 
 -  Purpose: **Get list of available automatic actions**
@@ -14,9 +14,7 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "getAvailableActions",
-        "id": 1217735483
+        
     }
 
 Response example:
@@ -48,7 +46,7 @@ Response example:
         }
     }
 
-getAvailableActionEvents
+GET: /automatic/availableactionevents
 ------------------------
 
 -  Purpose: **Get list of available events for actions**
@@ -61,9 +59,7 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "getAvailableActionEvents",
-        "id": 2116665643
+    
     }
 
 Response example:
@@ -95,7 +91,7 @@ Response example:
         }
     }
 
-getCompatibleActionEvents
+GET: automatic/CompatibleActionEvents
 -------------------------
 
 -  Purpose: **Get list of events compatible with an action**
@@ -111,9 +107,7 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "getCompatibleActionEvents",
-        "id": 899370297,
+        
         "params": [
             "\\Workflow\\Action\\TaskClose"
         ]
