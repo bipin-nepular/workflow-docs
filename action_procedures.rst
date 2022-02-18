@@ -91,7 +91,7 @@ Response example:
         }
     }
 
-GET: automatic/CompatibleActionEvents
+GET: automatic/compatibleactionevents
 -------------------------
 
 -  Purpose: **Get list of events compatible with an action**
@@ -108,7 +108,7 @@ Request example:
 
     {
         
-        "params": [
+     [
             "\\Workflow\\Action\\TaskClose"
         ]
     }
@@ -130,7 +130,7 @@ Response example:
         }
     }
 
-getActions
+GET: automatic/actions
 ----------
 
 -  Purpose: **Get list of actions for a project**
@@ -146,12 +146,7 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "getActions",
-        "id": 1433237746,
-        "params": [
-            "1"
-        ]
+["1"]
     }
 
 Response example:
