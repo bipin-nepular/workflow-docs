@@ -1,7 +1,8 @@
 Subtask API Procedures
 ======================
 
-createSubtask
+
+POST: subtask/subtask
 -------------
 
 -  Purpose: **Create a new subtask**
@@ -20,16 +21,10 @@ createSubtask
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "createSubtask",
-        "id": 2041554661,
-        "params": {
-            "task_id": 1,
-            "title": "Subtask #1"
-        }
-    }
+       
+        {"task_id": 1,
+          "title": "Subtask #1"}
+    
 
 Response example:
 
@@ -41,7 +36,7 @@ Response example:
         "result": 45
     }
 
-getSubtask
+GET: subtask/subtask
 ----------
 
 -  Purpose: **Get subtask information**
@@ -56,14 +51,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getSubtask",
-        "id": 133184525,
-        "params": {
-            "subtask_id": 1
-        }
-    }
+     {"subtask_id": 1 }
+    
 
 Response example:
 
@@ -83,7 +72,7 @@ Response example:
         }
     }
 
-getAllSubtasks
+GET: subtask/allsubtasks
 --------------
 
 -  Purpose: **Get all available subtasks**
@@ -98,14 +87,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllSubtasks",
-        "id": 2087700490,
-        "params": {
-            "task_id": 1
-        }
-    }
+     {"task_id": 1}
+    
 
 Response example:
 
@@ -130,7 +113,7 @@ Response example:
         ]
     }
 
-updateSubtask
+PUT: subtask/subtask
 -------------
 
 -  Purpose: **Update a subtask**
@@ -151,18 +134,12 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateSubtask",
-        "id": 191749979,
-        "params": {
-            "id": 1,
-            "task_id": 1,
-            "status": 1,
-            "time_spent": 5,
-            "user_id": 1
-        }
-    }
+     {"id": 1,
+      "task_id": 1,
+      "status": 1,
+      "time_spent": 5,
+        "user_id": 1}
+    
 
 Response example:
 
@@ -174,7 +151,7 @@ Response example:
         "result": true
     }
 
-removeSubtask
+DELTE: subtask/subtask
 -------------
 
 -  Purpose: **Remove a subtask**
@@ -189,14 +166,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeSubtask",
-        "id": 1382487306,
-        "params": {
-            "subtask_id": 1
-        }
-    }
+     {"subtask_id": 1}
+    
 
 Response example:
 

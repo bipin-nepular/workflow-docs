@@ -1,7 +1,7 @@
 Internal Task Link API Procedures
 =================================
 
-createTaskLink
+POST: Internal/tasklink
 --------------
 
 -  Purpose: **Create a link between two tasks**
@@ -18,16 +18,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createTaskLink",
-        "id": 509742912,
-        "params": [
-            2,
-            3,
-            1
-        ]
-    }
+        [ 2,
+          3,
+          1 ]
+    
 
 Response example:
 
@@ -39,7 +33,7 @@ Response example:
         "result": 1
     }
 
-updateTaskLink
+PUT: Internal/tasklink
 --------------
 
 -  Purpose: **Update task link**
@@ -56,18 +50,11 @@ updateTaskLink
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "updateTaskLink",
-        "id": 669037109,
-        "params": [
-            1,
+         
+         [  1,
             2,
             4,
-            2
-        ]
-    }
+            2 ] 
 
 Response example:
 
@@ -79,7 +66,7 @@ Response example:
         "result": true
     }
 
-getTaskLinkById
+GET: Internal/tasklinkbyid
 ---------------
 
 -  Purpose: **Get a task link**
@@ -94,14 +81,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTaskLinkById",
-        "id": 809885202,
-        "params": [
-            1
-        ]
-    }
+     [ 1 ]
 
 Response example:
 
@@ -118,7 +98,7 @@ Response example:
         }
     }
 
-getAllTaskLinks
+GET: Internal/alltasklinks
 ---------------
 
 -  Purpose: **Get all links related to a task**
@@ -133,14 +113,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllTaskLinks",
-        "id": 810848359,
-        "params": [
-            2
-        ]
-    }
+   [ 2 ]
+    
 
 Response example:
 
@@ -167,7 +141,7 @@ Response example:
         ]
     }
 
-removeTaskLink
+DELTE: Internal/tasklink
 --------------
 
 -  Purpose: **Remove a link between two tasks**
@@ -182,14 +156,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeTaskLink",
-        "id": 473028226,
-        "params": [
-            1
-        ]
-    }
+    [ 1 ]
 
 Response example:
 

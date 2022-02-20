@@ -1,7 +1,7 @@
 Task Metadata API Procedures
 ============================
 
-getTaskMetadata
+GET: taskmetadata/taskmetadata/:id
 ---------------
 
 -  Purpose: **Get all metadata related to a task by task unique id**
@@ -16,14 +16,6 @@ Request example to fetch all the metada of a task:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTaskMetadata",
-        "id": 133280317,
-        "params": [
-            1
-        ]
-    }
 
 Response example:
 
@@ -40,7 +32,7 @@ Response example:
         ]
     }
 
-getTaskMetadataByName
+GET: taskmetadata/taskmetadatabyname
 ---------------------
 
 -  Purpose: **Get metadata related to a task by task unique id and
@@ -57,15 +49,9 @@ Request example to fetch metada of a task by name:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTaskMetadataByName",
-        "id": 133280317,
-        "params": [
-            1,
-            "metaKey1"
-        ]
-    }
+     [ 1,
+      "metaKey1" ]
+    
 
 Response example:
 
@@ -77,7 +63,7 @@ Response example:
         "result": "metaValue1"
     }
 
-saveTaskMetadata
+POST: taskmetadata/taskmetadata
 ----------------
 
 -  Purpose: **Save/update task metadata**
@@ -93,17 +79,9 @@ Request example to add/update metada of a task:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "saveTaskMetadata",
-        "id": 133280317,
-        "params": [
-            1,
-            {
-                "metaName" : "metaValue"
-            }
-        ]
-    }
+     [ 1,
+     "metaName" : "metaValue"]
+    
 
 Response example:
 
@@ -115,7 +93,7 @@ Response example:
         "result": true
     }
 
-removeTaskMetadata
+DELTE: taskmetadata/taskmetadata
 ------------------
 
 -  Purpose: **Remove task metadata by name**
@@ -131,15 +109,9 @@ Request example to remove metada of a task by name:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeTaskMetadata",
-        "id": 133280317,
-        "params": [
-            1,
-            "metaKey1"
-        ]
-    }
+     [  1,
+    "metaKey1"]
+    
 
 Response example:
 

@@ -1,7 +1,7 @@
 Swimlane API Procedures
 =======================
 
-getActiveSwimlanes
+GET: swimlane/activeswimlanes/:id
 ------------------
 
 -  Purpose: **Get the list of enabled swimlanes of a project (include
@@ -17,14 +17,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getActiveSwimlanes",
-        "id": 934789422,
-        "params": [
-            1
-        ]
-    }
 
 Response example:
 
@@ -45,7 +37,7 @@ Response example:
         ]
     }
 
-getAllSwimlanes
+GET: swimlane/allswimlanes/:id
 ---------------
 
 -  Purpose: **Get the list of all swimlanes of a project (enabled or
@@ -61,14 +53,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllSwimlanes",
-        "id": 509791576,
-        "params": [
-            1
-        ]
-    }
 
 Response example:
 
@@ -95,7 +79,7 @@ Response example:
         ]
     }
 
-getSwimlane
+GET: swimlane/swimlane/:id
 -----------
 
 -  Purpose: **Get the a swimlane by id**
@@ -110,14 +94,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getSwimlane",
-        "id": 131071870,
-        "params": [
-            1
-        ]
-    }
 
 Response example:
 
@@ -135,7 +111,7 @@ Response example:
         }
     }
 
-getSwimlaneById
+GET: swimlane/swimlanebyid
 ---------------
 
 -  Purpose: **Get the a swimlane by id**
@@ -150,14 +126,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getSwimlaneById",
-        "id": 131071870,
-        "params": [
-            1
-        ]
-    }
 
 Response example:
 
@@ -175,7 +143,7 @@ Response example:
         }
     }
 
-getSwimlaneByName
+GET: swimlane/swimlanebyname
 -----------------
 
 -  Purpose: **Get the a swimlane by name**
@@ -191,15 +159,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getSwimlaneByName",
-        "id": 824623567,
-        "params": [
-            1,
-            "Swimlane 1"
-        ]
-    }
+      [1,
+      "Swimlane 1"]
 
 Response example:
 
@@ -217,7 +178,7 @@ Response example:
         }
     }
 
-changeSwimlanePosition
+PUT: swimlane/swimlaneposition
 ----------------------
 
 -  Purpose: **Move up the swimlane position** (only for active
@@ -235,16 +196,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "changeSwimlanePosition",
-        "id": 99275573,
-        "params": [
-            1,
-            2,
-            3
-        ]
-    }
+     [1,
+      2,
+      3]
+    
 
 Response example:
 
@@ -256,7 +211,7 @@ Response example:
         "result": true
     }
 
-updateSwimlane
+PUT: swimlane/swimlane
 --------------
 
 -  Purpose: **Update swimlane properties**
@@ -274,16 +229,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateSwimlane",
-        "id": 87102426,
-        "params": [
-            "1",
-            "1",
-            "Another swimlane"
-        ]
-    }
+     ["1",
+      "1",
+     "Another swimlane"]
+    
 
 Response example:
 
@@ -295,7 +244,7 @@ Response example:
         "result": true
     }
 
-addSwimlane
+POST: swimlane/swimlane
 -----------
 
 -  Purpose: **Add a new swimlane**
@@ -312,15 +261,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "addSwimlane",
-        "id": 849940086,
-        "params": [
-            1,
-            "Swimlane 1"
-        ]
-    }
+     [1,
+    "Swimlane 1"]
+    
 
 Response example:
 
@@ -332,7 +275,7 @@ Response example:
         "result": 1
     }
 
-removeSwimlane
+DELTE: swimlane/swimlane
 --------------
 
 -  Purpose: **Remove a swimlane**
@@ -348,15 +291,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeSwimlane",
-        "id": 1433237746,
-        "params": [
-            2,
-            1
-        ]
-    }
+     [ 2,
+       1 ]
+
 
 Response example:
 
@@ -368,7 +305,8 @@ Response example:
         "result": true
     }
 
-disableSwimlane
+
+PUT: swimlane/swimlane
 ---------------
 
 -  Purpose: **Disable a swimlane**
@@ -384,15 +322,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "disableSwimlane",
-        "id": 1433237746,
-        "params": [
-            2,
-            1
-        ]
-    }
+    [  2,
+       1  ]
+    
 
 Response example:
 
@@ -404,7 +336,7 @@ Response example:
         "result": true
     }
 
-enableSwimlane
+PUT: swimlane/swimlane
 --------------
 
 -  Purpose: **Enable a swimlane**
@@ -420,15 +352,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "enableSwimlane",
-        "id": 1433237746,
-        "params": [
-            2,
-            1
-        ]
-    }
+     [ 2,
+        1 ]
+    
 
 Response example:
 

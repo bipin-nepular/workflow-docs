@@ -1,7 +1,7 @@
 User API Procedures
 ===================
 
-createUser
+POST: user/user
 ----------
 
 -  Purpose: **Create a new user**
@@ -20,16 +20,10 @@ createUser
 Request example:
 
 .. code:: json
+       
+        {"username": "biloute",
+        "password": "123456"}
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createUser",
-        "id": 1518863034,
-        "params": {
-            "username": "biloute",
-            "password": "123456"
-        }
-    }
 
 Response example:
 
@@ -41,7 +35,7 @@ Response example:
         "result": 22
     }
 
-createLdapUser
+POST: user/ldapuser/:id
 --------------
 
 -  Purpose: **Create a new user authentified by LDAP**
@@ -60,14 +54,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createLdapUser",
-        "id": 1518863034,
-        "params": {
-            "username": "my_ldap_user"
-        }
-    }
 
 Response example:
 
@@ -79,7 +65,7 @@ Response example:
         "result": 22
     }
 
-getUser
+GET: user/user/:id
 -------
 
 -  Purpose: **Get user information**
@@ -94,14 +80,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getUser",
-        "id": 1769674781,
-        "params": {
-            "user_id": 1
-        }
-    }
+    {"user_id": 1 }
+    
 
 Response example:
 
@@ -124,7 +104,7 @@ Response example:
         }
     }
 
-getUserByName
+GET: user/userbyname/:id
 -------------
 
 -  Purpose: **Get user information**
@@ -139,14 +119,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getUserByName",
-        "id": 1769674782,
-        "params": {
-            "username": "biloute"
-        }
-    }
 
 Response example:
 
@@ -169,7 +141,7 @@ Response example:
         }
     }
 
-getAllUsers
+GET: user/allusers
 -----------
 
 -  Purpose: **Get all available users**
@@ -184,11 +156,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllUsers",
-        "id": 1438712131
-    }
 
 Response example:
 
@@ -212,7 +179,8 @@ Response example:
         ]
     }
 
-updateUser
+
+PUT: user/user
 ----------
 
 -  Purpose: **Update a user**
@@ -232,15 +200,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateUser",
-        "id": 322123657,
-        "params": {
-            "id": 1,
-            "role": "app-manager"
-        }
-    }
+     { "id": 1,
+      "role": "app-manager"}
+    
 
 Response example:
 
@@ -252,7 +214,7 @@ Response example:
         "result": true
     }
 
-removeUser
+DELTE: user/user/:id
 ----------
 
 -  Purpose: **Remove a user**
@@ -267,14 +229,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 
@@ -286,7 +240,7 @@ Response example:
         "result": true
     }
 
-disableUser
+POST: user/user/:id
 -----------
 
 -  Purpose: **Disable a user**
@@ -301,14 +255,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "disableUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 
@@ -320,7 +266,7 @@ Response example:
         "result": true
     }
 
-enableUser
+POST: user/user/:id
 ----------
 
 -  Purpose: **Enable a user**
@@ -335,14 +281,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "enableUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 
@@ -354,7 +292,7 @@ Response example:
         "result": true
     }
 
-isActiveUser
+GET: user/activeuser/:id
 ------------
 
 -  Purpose: **Check if a user is active**
@@ -369,14 +307,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "isActiveUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 

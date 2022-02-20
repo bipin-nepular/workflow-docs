@@ -145,9 +145,9 @@ Request example:
 
 .. code:: json
 
-    {
-["1"]
-    }
+    
+    ["1"]
+    
 
 Response example:
 
@@ -170,7 +170,7 @@ Response example:
         ]
     }
 
-createAction
+POST: automatic/action
 ------------
 
 -  Purpose: **Create an action**
@@ -187,21 +187,12 @@ createAction
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "createAction",
-        "id": 1433237746,
-        "params": {
-            "project_id" : "2",
-            "event_name" : "task.move.column",
-            "action_name" : "\\Workflow\\Action\\TaskAssignSpecificUser",
-            "params" : {
-                "column_id" : "3",
-                "user_id" : "2"
+         {
+          "column_id" : "3",
+          "user_id" : "2"
             }
-        }
-    }
+        
+    
 
 Response example:
 
@@ -213,7 +204,7 @@ Response example:
         "result": 14
     }
 
-removeAction
+DELTE: automatic/action
 ------------
 
 -  Purpose: **Remove an action**
@@ -227,15 +218,8 @@ removeAction
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "removeAction",
-        "id": 1510741671,
-        "params": [
-            1
-        ]
-    }
+     [ 1 ]
+    
 
 Response example:
 

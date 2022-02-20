@@ -1,7 +1,7 @@
 Application API Procedures
 ==========================
 
-getVersion
+GET: application/version
 ----------
 
 -  Purpose: **Get the application version**
@@ -12,11 +12,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getVersion",
-        "id": 1661138292
-    }
 
 Response example:
 
@@ -28,7 +23,7 @@ Response example:
         "result": "1.0.13"
     }
 
-getTimezone
+GET: application/timezone
 -----------
 
 -  Purpose: **Get the timezone of the connected user**
@@ -40,12 +35,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTimezone",
-        "id": 1661138292
-    }
-
+    
 Response example:
 
 .. code:: json
@@ -56,7 +46,7 @@ Response example:
         "result": "Europe\/Paris"
     }
 
-getDefaultTaskColors
+GET: application/defaulttaskcolors
 --------------------
 
 -  Purpose: **Get all default task colors**
@@ -67,11 +57,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getDefaultTaskColors",
-        "id": 2108929212
-    }
 
 Response example:
 
@@ -164,7 +149,7 @@ Response example:
         }
     }
 
-getDefaultTaskColor
+GET:application/defaulttaskcolor
 -------------------
 
 -  Purpose: **Get default task color**
@@ -175,11 +160,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getDefaultTaskColor",
-        "id": 1144775215
-    }
 
 Response example:
 
@@ -191,7 +171,7 @@ Response example:
         "result": "yellow"
     }
 
-getColorList
+GET: application/colorlist
 ------------
 
 -  Purpose: **Get the list of task colors**
@@ -202,11 +182,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getColorList",
-        "id": 1677051386
-    }
 
 Response example:
 
@@ -235,7 +210,7 @@ Response example:
         }
     }
 
-getApplicationRoles
+GET: application/applicationroles
 -------------------
 
 -  Purpose: **Get the application roles**
@@ -246,11 +221,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getApplicationRoles",
-        "id": 317154243
-    }
 
 Response example:
 
@@ -266,7 +236,7 @@ Response example:
         }
     }
 
-getProjectRoles
+GET: application/projectroles
 ---------------
 
 -  Purpose: **Get the project roles**
@@ -277,12 +247,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectRoles",
-        "id": 8981960
-    }
-
+    
 Response example:
 
 .. code:: json

@@ -1,7 +1,7 @@
 Comment API Procedures
 ======================
 
-createComment
+POST: comment/comment
 -------------
 
 -  Purpose: **Create a new comment**
@@ -18,16 +18,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createComment",
-        "id": 1580417921,
-        "params": {
+         {
             "task_id": 1,
             "user_id": 1,
-            "content": "Comment #1"
-        }
-    }
+            "content": "Comment #1"   }
 
 Response example:
 
@@ -39,7 +33,7 @@ Response example:
         "result": 11
     }
 
-getComment
+GET: comment/comment
 ----------
 
 -  Purpose: **Get comment information**
@@ -53,15 +47,9 @@ getComment
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getComment",
-        "id": 867839500,
-        "params": {
-            "comment_id": 1
-        }
-    }
+          
+  { "comment_id": 1  }
+            
 
 Response example:
 
@@ -81,7 +69,7 @@ Response example:
         }
     }
 
-getAllComments
+GET: comment/allcomments
 --------------
 
 -  Purpose: **Get all available comments**
@@ -95,16 +83,9 @@ getAllComments
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllComments",
-        "id": 148484683,
-        "params": {
-            "task_id": 1
-        }
-    }
-
+           
+ {"task_id": 1}
+    
 Response example:
 
 .. code:: json
@@ -125,7 +106,7 @@ Response example:
         ]
     }
 
-updateComment
+PUT: comment/comment
 -------------
 
 -  Purpose: **Update a comment**
@@ -141,15 +122,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateComment",
-        "id": 496470023,
-        "params": {
-            "id": 1,
-            "content": "Comment #1 updated"
+     { "id": 1,
+       "content": "Comment #1 updated"
         }
-    }
 
 Response example:
 
@@ -161,7 +136,7 @@ Response example:
         "result": true
     }
 
-removeComment
+DELTE: comment/comment
 -------------
 
 -  Purpose: **Remove a comment**
@@ -175,15 +150,9 @@ removeComment
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "removeComment",
-        "id": 328836871,
-        "params": {
-            "comment_id": 1
-        }
-    }
+       
+  {"comment_id": 1 }
+    
 
 Response example:
 

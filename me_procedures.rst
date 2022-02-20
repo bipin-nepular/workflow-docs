@@ -1,7 +1,7 @@
 User API Specific Procedures
 ============================
 
-getMe
+GET: userspecific/me
 -----
 
 -  Purpose: **Get logged user session**
@@ -13,11 +13,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getMe",
-        "id": 1718627783
-    }
 
 Response example:
 
@@ -46,7 +41,7 @@ Response example:
         }
     }
 
-getMyDashboard
+GET: userspecific/mydashboard
 --------------
 
 -  Purpose: **Get the dashboard of the logged user without pagination**
@@ -58,11 +53,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getMyDashboard",
-        "id": 447898718
-    }
 
 Response example:
 
@@ -148,7 +138,7 @@ Response example:
         }
     }
 
-getMyActivityStream
+GET: userspecific/myactivitystream
 -------------------
 
 -  Purpose: **Get the last 100 events for the logged user**
@@ -160,11 +150,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getMyActivityStream",
-        "id": 1132562181
-    }
 
 Response example:
 
@@ -232,7 +217,7 @@ Response example:
         ]
     }
 
-createMyPrivateProject
+POST: userspecific/myprivateproject
 ----------------------
 
 -  Purpose: **Create a private project for the logged user**
@@ -248,14 +233,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createMyPrivateProject",
-        "id": 1271580569,
-        "params": [
-            "my project"
-        ]
-    }
+     [ "my project" ]
 
 Response example:
 
@@ -267,7 +245,7 @@ Response example:
         "result": 2
     }
 
-getMyProjectsList
+GET: userspecific/myprojectslist
 -----------------
 
 -  Purpose: **Get projects of the connected user**
@@ -279,11 +257,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getMyProjectsList",
-        "id": 987834805
-    }
 
 Response example:
 
@@ -297,7 +270,7 @@ Response example:
         }
     }
 
-getMyOverdueTasks
+GET: userspecific/myoverduetasks
 -----------------
 
 -  Purpose: **Get my overdue tasks**
@@ -308,11 +281,6 @@ Request example to fetch all tasks on the board:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getMyOverdueTasks",
-        "id": 133280317
-    }
 
 Response example:
 
@@ -343,7 +311,7 @@ Response example:
         ]
     }
 
-getMyProjects
+GET: userspecific/myprojects
 -------------
 
 -  Purpose: **Get projects of connected user with full details**
@@ -358,11 +326,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getmyProjects",
-        "id": 2134420212
-    }
 
 Response example:
 

@@ -1,7 +1,7 @@
 Group API Procedures
 ====================
 
-createGroup
+POST: group/group
 -----------
 
 -  Purpose: **Create a new group**
@@ -17,15 +17,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createGroup",
-        "id": 1416806551,
-        "params": [
-            "My Group B",
-            "1234"
-        ]
-    }
+     [  "My Group B",
+            "1234"  ]
 
 Response example:
 
@@ -37,7 +30,7 @@ Response example:
         "result": 2
     }
 
-updateGroup
+PUT: group/group
 -----------
 
 -  Purpose: **Update a group**
@@ -53,17 +46,10 @@ updateGroup
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "updateGroup",
-        "id": 866078030,
-        "params": {
-            "group_id": "1",
-            "name": "ABC",
-            "external_id": "something"
-        }
-    }
+ 
+   { "group_id": "1",
+     "name": "ABC",
+     "external_id": "something" }
 
 Response example:
 
@@ -75,7 +61,7 @@ Response example:
         "result": true
     }
 
-removeGroup
+DELTE: group/group
 -----------
 
 -  Purpose: **Remove a group**
@@ -90,14 +76,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeGroup",
-        "id": 566000661,
-        "params": [
-            "1"
-        ]
-    }
+     [ "1"  ]
 
 Response example:
 
@@ -109,7 +88,7 @@ Response example:
         "result": true
     }
 
-getGroup
+GET: group/group
 --------
 
 -  Purpose: **Get one group**
@@ -124,14 +103,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getGroup",
-        "id": 1968647622,
-        "params": [
-            "1"
-        ]
-    }
+     [ "1" ]
 
 Response example:
 
@@ -147,7 +119,7 @@ Response example:
         }
     }
 
-getAllGroups
+GET: group/allgroups
 ------------
 
 -  Purpose: **Get all groups**
@@ -159,11 +131,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllGroups",
-        "id": 546070742
-    }
 
 Response example:
 

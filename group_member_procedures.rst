@@ -1,7 +1,7 @@
 Group Member API Procedures
 ===========================
 
-getMemberGroups
+GET: Groupmember/membergroups
 ---------------
 
 -  Purpose: **Get all groups for a given user**
@@ -15,15 +15,8 @@ getMemberGroups
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getMemberGroups",
-        "id": 1987176726,
-        "params": [
-            "1"
-        ]
-    }
+         
+  [ "1" ]
 
 Response example:
 
@@ -40,7 +33,7 @@ Response example:
         ]
     }
 
-getGroupMembers
+GET: Groupmember/groupmembers
 ---------------
 
 -  Purpose: **Get all members of a group**
@@ -55,14 +48,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getGroupMembers",
-        "id": 1987176726,
-        "params": [
-            "1"
-        ]
-    }
+      [ "1" ]
 
 Response example:
 
@@ -94,7 +80,7 @@ Response example:
         ]
     }
 
-addGroupMember
+POST: groupmember/groupmember
 --------------
 
 -  Purpose: **Add a user to a group**
@@ -110,15 +96,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "addGroupMember",
-        "id": 1589058273,
-        "params": [
-            1,
-            1
-        ]
-    }
+     [   1,
+         1  ]
+    
 
 Response example:
 
@@ -130,7 +110,7 @@ Response example:
         "result": true
     }
 
-removeGroupMember
+DELTE: groupmember/groupmember
 -----------------
 
 -  Purpose: **Remove a user from a group**
@@ -146,15 +126,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeGroupMember",
-        "id": 1730416406,
-        "params": [
-            1,
-            1
-        ]
-    }
+     [  1,
+        1  ]
 
 Response example:
 
@@ -166,7 +139,7 @@ Response example:
         "result": true
     }
 
-isGroupMember
+PUT: groupmember/groupmember
 -------------
 
 -  Purpose: **Check if a user is member of a group**
@@ -182,15 +155,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "isGroupMember",
-        "id": 1052800865,
-        "params": [
-            1,
-            1
-        ]
-    }
+         [  1,
+            1 ]
 
 Response example:
 

@@ -1,7 +1,7 @@
 Column API Procedures
 =====================
 
-getColumns
+GET: column/columns
 ----------
 
 -  Purpose: **Get all columns information for a given project**
@@ -16,14 +16,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getColumns",
-        "id": 887036325,
-        "params": [
-            1
-        ]
-    }
+     [ 1 ]
+    
 
 Response example:
 
@@ -57,7 +51,7 @@ Response example:
         ]
     }
 
-getColumn
+GET: column/column
 ---------
 
 -  Purpose: **Get a single column**
@@ -72,14 +66,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getColumn",
-        "id": 1242049935,
-        "params": [
-            2
-        ]
-    }
+  [ 2 ]  
 
 Response example:
 
@@ -97,7 +84,7 @@ Response example:
         }
     }
 
-changeColumnPosition
+PUT: column/columnposition
 --------------------
 
 -  Purpose: **Change the column position**
@@ -113,17 +100,11 @@ changeColumnPosition
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "changeColumnPosition",
-        "id": 99275573,
-        "params": [
-            1,
-            2,
-            3
-        ]
-    }
+    
+     [ 1,
+       2,
+       3 ]
+    
 
 Response example:
 
@@ -135,7 +116,7 @@ Response example:
         "result": true
     }
 
-updateColumn
+PUT: column/column
 ------------
 
 -  Purpose: **Update column properties**
@@ -152,17 +133,11 @@ updateColumn
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "updateColumn",
-        "id": 480740641,
-        "params": [
-            2,
-            "Boo",
-            5
-        ]
-    }
+        
+         [ 2,
+          "Boo",
+           5 ]
+          
 
 Response example:
 
@@ -174,7 +149,7 @@ Response example:
         "result": true
     }
 
-addColumn
+POST: column/column
 ---------
 
 -  Purpose: **Add a new column**
@@ -191,16 +166,10 @@ addColumn
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "addColumn",
-        "id": 638544704,
-        "params": [
-            1,
-            "Boo"
-        ]
-    }
+   
+    [   1,
+      "Boo" ]
+    
 
 Response example:
 
@@ -212,7 +181,7 @@ Response example:
         "result": 5
     }
 
-removeColumn
+DELTE: column/column
 ------------
 
 -  Purpose: **Remove a column**
@@ -227,14 +196,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeColumn",
-        "id": 1433237746,
-        "params": [
-            1
-        ]
-    }
+   [ 1 ]
 
 Response example:
 

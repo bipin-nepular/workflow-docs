@@ -1,7 +1,7 @@
 External Task Link API Procedures
 =================================
 
-getExternalTaskLinkTypes
+GET: External/externaltasklinktypes
 ------------------------
 
 -  Purpose: **Get all registered external link providers**
@@ -13,7 +13,6 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkTypes","id":477370568}
 
 Response example:
 
@@ -30,7 +29,7 @@ Response example:
         "id": 477370568
     }
 
-getExternalTaskLinkProviderDependencies
+GET: external/externaltasklinkproviderdependencies
 ---------------------------------------
 
 -  Purpose: **Get available dependencies for a given provider**
@@ -45,7 +44,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkProviderDependencies","id":124790226,"params":["weblink"]}
+    ["weblink"]
 
 Response example:
 
@@ -59,7 +58,7 @@ Response example:
         "id": 124790226
     }
 
-createExternalTaskLink
+POST: external/externaltasklink
 ----------------------
 
 -  Purpose: **Create a new external link**
@@ -78,7 +77,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"createExternalTaskLink","id":924217495,"params":[9,"http:\/\/localhost\/document.pdf","related","attachment"]}
+    [9,"http:\/\/localhost\/document.pdf","related","attachment"]
 
 Response example:
 
@@ -90,7 +89,7 @@ Response example:
         "id": 924217495
     }
 
-updateExternalTaskLink
+PUT: external/externaltasklink
 ----------------------
 
 -  Purpose: **Update external task link**
@@ -108,17 +107,10 @@ updateExternalTaskLink
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc":"2.0",
-        "method":"updateExternalTaskLink",
-        "id":1123562620,
-        "params": {
+          {
             "task_id":9,
             "link_id":1,
-            "title":"New title"
-        }
-    }
+            "title":"New title" }
 
 Response example:
 
@@ -130,7 +122,7 @@ Response example:
         "id": 1123562620
     }
 
-getExternalTaskLinkById
+GET: external/externaltasklinkbyid
 -----------------------
 
 -  Purpose: **Get an external task link**
@@ -146,7 +138,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkById","id":2107066744,"params":[9,1]}
+  [9,1]
 
 Response example:
 
@@ -168,7 +160,7 @@ Response example:
         "id": 2107066744
     }
 
-getAllExternalTaskLinks
+GET:allexternaltasklinks
 -----------------------
 
 -  Purpose: **Get all external links attached to a task**
@@ -183,7 +175,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getAllExternalTaskLinks","id":2069307223,"params":[9]}
+    [9]
 
 Response example:
 
@@ -211,7 +203,7 @@ Response example:
         "id": 2069307223
     }
 
-removeExternalTaskLink
+DELTE: external/externaltasklink
 ----------------------
 
 -  Purpose: **Remove an external link**
@@ -227,7 +219,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"removeExternalTaskLink","id":552055660,"params":[9,1]}
+  [9,1]
 
 Response example:
 
