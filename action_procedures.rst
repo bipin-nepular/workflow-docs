@@ -13,9 +13,7 @@ Request example:
 
 .. code:: json
 
-    {
-        
-    }
+    null
 
 Response example:
 
@@ -58,9 +56,7 @@ Request example:
 
 .. code:: json
 
-    {
-    
-    }
+    null
 
 Response example:
 
@@ -106,11 +102,8 @@ Request example:
 
 .. code:: json
 
-    {
-        
-     [
-            "\\Workflow\\Action\\TaskClose"
-        ]
+    {   
+     ["\\Workflow\\Action\\TaskClose"]
     }
 
 Response example:
@@ -130,7 +123,7 @@ Response example:
         }
     }
 
-GET: automatic/actions
+GET: automatic/actions/:project_id
 ----------
 
 -  Purpose: **Get list of actions for a project**
@@ -146,7 +139,7 @@ Request example:
 .. code:: json
 
     
-    ["1"]
+    null
     
 
 Response example:
@@ -170,7 +163,7 @@ Response example:
         ]
     }
 
-POST: automatic/action
+POST: automatic/action/:project_id
 ------------
 
 -  Purpose: **Create an action**
@@ -188,9 +181,13 @@ Request example:
 
 .. code:: json
          {
-          "column_id" : "3",
-          "user_id" : "2"
-            }
+        "event_name" : "task.move.column",
+        "action_name" : "\\Kanboard\\Action\\TaskAssignSpecificUser",
+        "params" : {
+            "column_id" : "3",
+            "user_id" : "2"
+        }
+    }
         
     
 
@@ -204,7 +201,7 @@ Response example:
         "result": 14
     }
 
-DELTE: automatic/action
+DELTE: automatic/action/:id
 ------------
 
 -  Purpose: **Remove an action**
@@ -218,7 +215,7 @@ DELTE: automatic/action
 Request example:
 
 .. code:: json
-     [ 1 ]
+     null
     
 
 Response example:
