@@ -34,7 +34,7 @@ Response example:
         "result": 2
     }
 
-GET: project/projectbyid
+GET: project/projectbyid/:id
 --------------
 
 -  Purpose: **Get project information**
@@ -49,7 +49,7 @@ Request example:
 
 .. code:: json
 
-     {"project_id": 1}
+     null
     
 
 Response example:
@@ -260,7 +260,7 @@ Response example:
         ]
     }
 
-PUT: project/project
+PUT: project/project/:id
 -------------
 
 -  Purpose: **Update a project**
@@ -281,7 +281,7 @@ Request example:
 
 .. code:: json
 
-    {"project_id": 1,
+    {
      "name": "PHP client update"}
     
 
@@ -295,7 +295,7 @@ Response example:
         "result": true
     }
 
-DELTE: project/project
+DELTE: project/project/:id
 -------------
 
 -  Purpose: **Remove a project**
@@ -307,7 +307,7 @@ Request example:
 
 .. code:: json
 
-     {"project_id": "2"}
+     null
     
 
 Response example:
@@ -320,7 +320,7 @@ Response example:
         "result": true
     }
 
-PUT: project/project
+PUT: project/enable/:id
 -------------
 
 -  Purpose: **Enable a project**
@@ -335,7 +335,7 @@ Request example:
 
 .. code:: json
 
-     ["1"]
+    
 
 
 Response example:
@@ -349,7 +349,7 @@ Response example:
     }
 
 
-PUT: project/project
+PUT: project/disable/:id
 --------------
 
 -  Purpose: **Disable a project**
@@ -364,7 +364,7 @@ Request example:
 
 .. code:: json
 
-     ["1"]
+     
 
 Response example:
 
@@ -378,7 +378,7 @@ Response example:
 
 
 
-PUT: project/projectpublicaccess
+PUT: project/enablepublicaccess/:id
 -------------------------
 
 -  Purpose: **Enable public access for a given project**
@@ -393,7 +393,7 @@ Request example:
 
 .. code:: json
 
- ["1"]
+ 
     
 
 Response example:
@@ -406,7 +406,7 @@ Response example:
         "result": true
     }
 
-PUT: project/projectpublicaccess
+PUT: project/disablepublicaccess/:id
 --------------------------
 
 -  Purpose: **Disable public access for a given project**
@@ -421,7 +421,7 @@ Request example:
 
 .. code:: json
 
-    ["1"]
+    
 
 
 Response example:
@@ -434,7 +434,7 @@ Response example:
         "result": true
     }
 
-GET: project/projectactivity
+GET: project/projectactivity/:id
 ------------------
 
 -  Purpose: **Get activity stream for a project**
@@ -447,7 +447,7 @@ GET: project/projectactivity
 
 Request example:
 
- {"project_id": 1}
+
     
 
 GET: project/projectactivities
