@@ -187,7 +187,7 @@ Request example:
             "column_id" : "3",
             "user_id" : "2"
         }
-    }
+        }
         
     
 
