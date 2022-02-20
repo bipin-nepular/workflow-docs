@@ -180,14 +180,14 @@ POST: automatic/action/:project_id
 Request example:
 
 .. code:: json
-         {
+      {
         "event_name" : "task.move.column",
         "action_name" : "\\Kanboard\\Action\\TaskAssignSpecificUser",
         "params" : {
             "column_id" : "3",
             "user_id" : "2"
-        }
-        }
+            }
+      }
         
     
 
