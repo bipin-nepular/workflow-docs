@@ -103,7 +103,7 @@ Request example:
 .. code:: json
 
      
-     ["\\Kanboard\\Action\\TaskClose"]
+     ["\\Kanboard\\Action\\TaskAssignCurrentUser"]
    
 
 Response example:
@@ -202,7 +202,7 @@ Response example:
         "result": 14
     }
 
-DELTE: automatic/action/:id
+DELTE: automatic/action/:action_id
 ------------
 
 -  Purpose: **Remove an action**
