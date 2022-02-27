@@ -17,8 +17,10 @@ Request example:
 
 .. code:: json
 
-     [  "My Group B",
-            "1234"  ]
+     {
+     "name" :"Accounts Group",
+     "external_id" : "1234"
+     }
 
 Response example:
 
@@ -30,7 +32,7 @@ Response example:
         "result": 2
     }
 
-PUT: group/group
+PUT: group/group/:group_id
 -----------
 
 -  Purpose: **Update a group**
@@ -47,7 +49,7 @@ Request example:
 
 .. code:: json
  
-   { "group_id": "1",
+   { 
      "name": "ABC",
      "external_id": "something" }
 
@@ -61,7 +63,7 @@ Response example:
         "result": true
     }
 
-DELTE: group/group
+DELTE: group/group/:group_id
 -----------
 
 -  Purpose: **Remove a group**
@@ -76,7 +78,7 @@ Request example:
 
 .. code:: json
 
-     [ "1"  ]
+     
 
 Response example:
 
@@ -88,7 +90,7 @@ Response example:
         "result": true
     }
 
-GET: group/group
+GET: group/group/:group_id
 --------
 
 -  Purpose: **Get one group**
@@ -103,7 +105,7 @@ Request example:
 
 .. code:: json
 
-     [ "1" ]
+     
 
 Response example:
 
