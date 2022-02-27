@@ -62,7 +62,7 @@ Response example:
         }
     }
 
-POST: projectpermission/projectuser
+POST: projectpermission/projectuser/:project_id
 --------------
 
 -  Purpose: **Grant access to a project for a user**
@@ -79,9 +79,10 @@ Request example:
 
 .. code:: json
 
-     ["1",
-      "1",
-     "project-viewer"]
+   {
+      "user_id" : 1,
+      "role" : "project-manager"
+   }
 
 Response example:
 
@@ -93,7 +94,7 @@ Response example:
         "result": true
     }
 
-POST: projectpermission/projectgroup
+POST: projectpermission/projectgroup/:project_id
 ---------------
 
 -  Purpose: **Grant access to a project for a group**
@@ -110,8 +111,10 @@ Request example:
 
 .. code:: json
 
-     ["1",
-      "1"]
+     {
+     "group_id" : 1,
+     "role" : "project-viewer"
+     }
     
 
 Response example:
@@ -124,7 +127,7 @@ Response example:
         "result": true
     }
 
-DELTE: projectpermission/projectuser
+DELTE: projectpermission/projectuser/:project_id
 -----------------
 
 -  Purpose: **Revoke user access to a project**
@@ -140,8 +143,9 @@ Request example:
 
 .. code:: json
 
-    [ 1,
-      1 ]
+    {
+    "user_id" : 1
+    }
     
 
 Response example:
@@ -154,7 +158,7 @@ Response example:
         "result": true
     }
 
-DELTE: projectpermission/projectgroup
+DELTE: projectpermission/projectgroup/:project_id
 ------------------
 
 -  Purpose: **Revoke group access to a project**
@@ -170,8 +174,9 @@ Request example:
 
 .. code:: json
 
-     [ 1,
-       1 ]
+    {
+    "group_id" : 1
+    }
     
 
 Response example:
@@ -184,7 +189,7 @@ Response example:
         "result": true
     }
 
-PUT: projectpermission/projectuserrole
+PUT: projectpermission/projectuserrole/:project_id
 ---------------------
 
 -  Purpose: **Change role of a user for a project**
@@ -201,9 +206,10 @@ Request example:
 
 .. code:: json
 
-     ["1",
-      "1",
-     "project-viewer"]
+    {
+    "user_id" : 1,
+    "user_role" : "project-viewer"
+    }
     
 
 Response example:
@@ -216,7 +222,7 @@ Response example:
         "result": true
     }
 
-PUT: projectpermission/projectgrouprole
+PUT: projectpermission/projectgrouprole/:project_id
 ----------------------
 
 -  Purpose: **Change role of a group for a project**
@@ -233,9 +239,10 @@ Request example:
 
 .. code:: json
 
-     ["1",
-      "1",
-    "project-viewer"]
+    {
+    "group_id" : 1,
+    "group_role" : "project-viewer"
+    }
     
 
 Response example:
@@ -248,7 +255,7 @@ Response example:
         "result": true
     }
 
-Get: projectpermission/projectuserrole
+Get: projectpermission/projectuserrole/:project_id
 ------------------
 
 -  Purpose: **Get the role of a user for a given project**
@@ -264,8 +271,9 @@ Request example:
 
 .. code:: json
      
-      ["2",
-      "3"]
+     {
+     "user_id": 5
+     }
 
 
 Response example:
