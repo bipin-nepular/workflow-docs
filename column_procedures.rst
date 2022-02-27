@@ -16,7 +16,9 @@ Request example:
 
 .. code:: json
 
-     [ 1 ]
+     {
+         "project_id" : 1
+     }
     
 
 Response example:
