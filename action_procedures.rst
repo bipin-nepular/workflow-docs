@@ -163,7 +163,7 @@ Response example:
         ]
     }
 
-POST: automatic/action/:project_id
+POST: automatic/actions/:project_id
 ------------
 
 -  Purpose: **Create an action**
@@ -202,7 +202,7 @@ Response example:
         "result": 14
     }
 
-DELTE: automatic/action/:action_id
+DELTE: automatic/actions/:action_id
 ------------
 
 -  Purpose: **Remove an action**
