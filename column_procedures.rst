@@ -84,7 +84,7 @@ Response example:
         }
     }
 
-PUT: column/columnposition
+PUT: column/changecolumnposition
 --------------------
 
 -  Purpose: **Change the column position**
