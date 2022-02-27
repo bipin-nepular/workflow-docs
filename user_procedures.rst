@@ -35,7 +35,7 @@ Response example:
         "result": 22
     }
 
-POST: user/ldapuser/:id
+POST: user/ldapuser
 --------------
 
 -  Purpose: **Create a new user authentified by LDAP**
@@ -53,7 +53,10 @@ anonymous mode.
 Request example:
 
 .. code:: json
-
+      {
+         "username":"nepular"
+      }
+      
 
 Response example:
 
@@ -65,7 +68,7 @@ Response example:
         "result": 22
     }
 
-GET: user/user/:id
+GET: user/user/:user_id
 -------
 
 -  Purpose: **Get user information**
@@ -80,7 +83,6 @@ Request example:
 
 .. code:: json
 
-    {"user_id": 1 }
     
 
 Response example:
@@ -104,7 +106,7 @@ Response example:
         }
     }
 
-GET: user/userbyname/:id
+GET: user/userbyname
 -------------
 
 -  Purpose: **Get user information**
@@ -118,6 +120,9 @@ GET: user/userbyname/:id
 Request example:
 
 .. code:: json
+      {
+         "username" : "nepular"
+      }
 
 
 Response example:
