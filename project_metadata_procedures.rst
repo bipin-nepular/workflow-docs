@@ -1,7 +1,7 @@
 Project Metadata API Procedures
 ===============================
 
-Get: projectmetadata/projectmetadata
+Get: projectmetadata/projectmetadata/:project_id
 ------------------
 
 -  Purpose: **Get Project metadata**
@@ -16,7 +16,7 @@ Request example:
 
 .. code:: json
 
-       {"project_id": 1}
+       
     
 
 Response example:
@@ -31,7 +31,7 @@ Response example:
         }
     }
 
-Get: projectmetadata/projectmetadatabyname
+Get: projectmetadata/projectmetadatabyname/:project_id
 ------------------------
 
 -  Purpose: **Fetch single metadata value**
@@ -47,8 +47,9 @@ Request example:
 
 .. code:: json
 
-         { "project_id": 1,
-            "name": "key1" }
+         { 
+            "name": "key1" 
+         }
 
 Response example:
 
@@ -60,7 +61,7 @@ Response example:
         "result": "value1"
     }
 
-POST: projectmetadata/rojectmetadata
+POST: projectmetadata/projectmetadata/:project_id
 -------------------
 
 -  Purpose: **Add or update metadata**
@@ -76,9 +77,12 @@ Request example:
 
 .. code:: json
           
-          {"project_id": 1,
-           "values": {
-           "key1": "value1"}
+          {
+           "values": 
+              {
+              "key1": "value1"
+              }
+          }
         
 
 
@@ -92,7 +96,7 @@ Response example:
         "result": true
     }
 
-DELTE: projectmetadata/projectmetadata
+DELTE: projectmetadata/projectmetadata/:project_id
 ---------------------
 
 -  Purpose: **Remove a project metadata**
@@ -108,7 +112,7 @@ Request example:
 
 .. code:: json
 
-      {"project_id": 1,
+      {
        "name": "my key"}
 
 Response example:
