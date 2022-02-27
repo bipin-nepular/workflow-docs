@@ -1,7 +1,7 @@
 Project File API Procedures
 ===========================
 
-POST: projectfile/projectfile
+POST: projectfile/projectfile/:project_id
 -----------------
 
 -  Purpose: **Create and upload a new project attachment**
@@ -20,10 +20,10 @@ Request example:
 
 .. code:: json
 
-     [     1,
-          "My file",
-          "cGxhaW4gdGV4dCBmaWxl"
-        ]  
+     {
+      "filename" : "new file",
+      "blob" : "cGxhaW4gdGV4dCBmaWxl"
+     }
 
 Response example:
 
@@ -35,7 +35,7 @@ Response example:
         "result": 1
     }
 
-GET: projectfile/allprojectfiles
+GET: projectfile/allprojectfiles/:project_id
 ------------------
 
 -  Purpose: **Get all files attached to a project**
@@ -50,8 +50,8 @@ Request example:
 
 .. code:: json
     
-     {"project_id": 1 }
-    }
+     
+    
 
 Response example:
 
@@ -76,7 +76,7 @@ Response example:
         ]
     }
 
-GET: projectfile/projectfile
+GET: projectfile/projectfile/:file_id
 --------------
 
 -  Purpose: **Get file information**
@@ -91,10 +91,9 @@ GET: projectfile/projectfile
 Request example:
 
 .. code:: json
-        [    
-        "42",
-        "1"
-        ]
+       {
+       "project_id" : 3
+       }
 
 Response example:
 
@@ -115,7 +114,7 @@ Response example:
         }
     }
 
-GET: projectfile/projectfile
+GET: projectfile/downloadprojectfile/:file_id
 -------------------
 
 -  Purpose: **Download project file contents (encoded in base64)**
@@ -131,8 +130,9 @@ Request example:
 
 .. code:: json
 
-       [    "1",
-            "1"   ]
+     {
+     "project_id" : 1
+     }
 
 Response example:
 
@@ -144,7 +144,7 @@ Response example:
         "result": "cGxhaW4gdGV4dCBmaWxl"
     }
 
-DELTE: projectfile/projectfile
+DELTE: projectfile/projectfile/:file_id
 -----------------
 
 -  Purpose: **Remove a file associated to a project**
@@ -159,10 +159,9 @@ DELTE: projectfile/projectfile
 Request example:
 
 .. code:: json
-        [
-            "1",
-            "1"
-                 ]
+        {
+        "project_id" : 
+        }
 
 Response example:
 
@@ -174,7 +173,7 @@ Response example:
         "result": true
     }
 
-DELTE: projectfile/allprojectfiles
+DELTE: projectfile/allprojectfiles/:project_id
 ---------------------
 
 -  Purpose: **Remove all files associated to a project**
