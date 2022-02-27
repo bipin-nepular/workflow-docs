@@ -46,7 +46,7 @@ Request example:
 .. code:: json
 
     {
-    "provider_name" : "weblink
+    "provider_name" : "weblink"
     }
 
 Response example:
@@ -83,7 +83,8 @@ Request example:
  {
     "url" : "http://localhost:99/document.pdf",
     "dependency" : "related",
-    "type" : "attachment"
+    "type" : "attachment",
+    "title": "TITLE LINK"
  }
     
 
