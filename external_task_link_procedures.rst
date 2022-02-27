@@ -135,7 +135,7 @@ Response example:
         "id": 1123562620
     }
 
-getExternalTaskLinkById
+GET: externaltasklink/:link_id
 -----------------------
 
 -  Purpose: **Get an external task link**
@@ -151,7 +151,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkById","id":2107066744,"params":[9,1]}
+    {task_id: 9}
 
 Response example:
 
@@ -173,7 +173,7 @@ Response example:
         "id": 2107066744
     }
 
-getAllExternalTaskLinks
+GET: allexternaltasklinks
 -----------------------
 
 -  Purpose: **Get all external links attached to a task**
@@ -188,7 +188,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getAllExternalTaskLinks","id":2069307223,"params":[9]}
+    {task_id: 9}
 
 Response example:
 
@@ -216,7 +216,7 @@ Response example:
         "id": 2069307223
     }
 
-removeExternalTaskLink
+DELETE: externaltasklink/:link_id
 ----------------------
 
 -  Purpose: **Remove an external link**
@@ -232,7 +232,9 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"removeExternalTaskLink","id":552055660,"params":[9,1]}
+    {
+    "task_id" : 1
+    }
 
 Response example:
 
