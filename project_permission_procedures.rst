@@ -16,7 +16,7 @@ Request example:
 
 .. code:: json
 
-     ["1"]
+   
 
 Response example:
 
@@ -47,7 +47,6 @@ Request example:
 
 .. code:: json
 
-     ["1"]
 
 
 Response example:
