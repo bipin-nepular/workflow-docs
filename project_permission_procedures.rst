@@ -1,7 +1,7 @@
 Project Permission API Procedures
 =================================
 
-getProjectUsers
+Get: projectpermission/projectusers
 ---------------
 
 -  Purpose: **Get all members of a project**
@@ -16,14 +16,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectUsers",
-        "id": 1601016721,
-        "params": [
-            "1"
-        ]
-    }
+     ["1"]
 
 Response example:
 
@@ -37,7 +30,7 @@ Response example:
         }
     }
 
-getAssignableUsers
+Get:  projectpermission/assignableusers
 ------------------
 
 -  Purpose: **Get users that can be assigned to a task for a project**
@@ -54,14 +47,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAssignableUsers",
-        "id": 658294870,
-        "params": [
-            "1"
-        ]
-    }
+     ["1"]
+
 
 Response example:
 
@@ -75,7 +62,7 @@ Response example:
         }
     }
 
-addProjectUser
+POST: projectpermission/projectuser
 --------------
 
 -  Purpose: **Grant access to a project for a user**
@@ -92,16 +79,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "addProjectUser",
-        "id": 1294688355,
-        "params": [
-            "1",
-            "1",
-            "project-viewer"
-        ]
-    }
+     ["1",
+      "1",
+     "project-viewer"]
 
 Response example:
 
@@ -113,7 +93,7 @@ Response example:
         "result": true
     }
 
-addProjectGroup
+POST: projectpermission/projectgroup
 ---------------
 
 -  Purpose: **Grant access to a project for a group**
@@ -130,15 +110,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "addProjectGroup",
-        "id": 1694959089,
-        "params": [
-            "1",
-            "1"
-        ]
-    }
+     ["1",
+      "1"]
+    
 
 Response example:
 
@@ -150,7 +124,7 @@ Response example:
         "result": true
     }
 
-removeProjectUser
+DELTE: projectpermission/projectuser
 -----------------
 
 -  Purpose: **Revoke user access to a project**
@@ -166,15 +140,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeProjectUser",
-        "id": 645233805,
-        "params": [
-            1,
-            1
-        ]
-    }
+    [ 1,
+      1 ]
+    
 
 Response example:
 
@@ -186,7 +154,7 @@ Response example:
         "result": true
     }
 
-removeProjectGroup
+DELTE: projectpermission/projectgroup
 ------------------
 
 -  Purpose: **Revoke group access to a project**
@@ -202,15 +170,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeProjectGroup",
-        "id": 557146966,
-        "params": [
-            1,
-            1
-        ]
-    }
+     [ 1,
+       1 ]
+    
 
 Response example:
 
@@ -222,7 +184,7 @@ Response example:
         "result": true
     }
 
-changeProjectUserRole
+PUT: projectpermission/projectuserrole
 ---------------------
 
 -  Purpose: **Change role of a user for a project**
@@ -239,16 +201,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "changeProjectUserRole",
-        "id": 193473170,
-        "params": [
-            "1",
-            "1",
-            "project-viewer"
-        ]
-    }
+     ["1",
+      "1",
+     "project-viewer"]
+    
 
 Response example:
 
@@ -260,7 +216,7 @@ Response example:
         "result": true
     }
 
-changeProjectGroupRole
+PUT: projectpermission/projectgrouprole
 ----------------------
 
 -  Purpose: **Change role of a group for a project**
@@ -277,16 +233,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "changeProjectGroupRole",
-        "id": 2114673298,
-        "params": [
-            "1",
-            "1",
-            "project-viewer"
-        ]
-    }
+     ["1",
+      "1",
+    "project-viewer"]
+    
 
 Response example:
 
@@ -298,7 +248,7 @@ Response example:
         "result": true
     }
 
-getProjectUserRole
+Get: projectpermission/projectuserrole
 ------------------
 
 -  Purpose: **Get the role of a user for a given project**
@@ -313,16 +263,10 @@ getProjectUserRole
 Request example:
 
 .. code:: json
+     
+      ["2",
+      "3"]
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectUserRole",
-        "id": 2114673298,
-        "params": [
-            "2",
-            "3"
-        ]
-    }
 
 Response example:
 

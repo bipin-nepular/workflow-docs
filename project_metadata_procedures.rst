@@ -1,7 +1,7 @@
 Project Metadata API Procedures
 ===============================
 
-getProjectMetadata
+Get: projectmetadata/projectmetadata
 ------------------
 
 -  Purpose: **Get Project metadata**
@@ -16,14 +16,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectMetadata",
-        "id": 1797076613,
-        "params": {
-            "project_id": 1
-        }
-    }
+       {"project_id": 1}
+    
 
 Response example:
 
@@ -37,7 +31,7 @@ Response example:
         }
     }
 
-getProjectMetadataByName
+Get: projectmetadata/projectmetadatabyname
 ------------------------
 
 -  Purpose: **Fetch single metadata value**
@@ -53,15 +47,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectMetadataByName",
-        "id": 1797076613,
-        "params": {
-            "project_id": 1,
-            "name": "key1"
-        }
-    }
+         { "project_id": 1,
+            "name": "key1" }
 
 Response example:
 
@@ -73,7 +60,7 @@ Response example:
         "result": "value1"
     }
 
-saveProjectMetadata
+POST: projectmetadata/rojectmetadata
 -------------------
 
 -  Purpose: **Add or update metadata**
@@ -88,18 +75,12 @@ saveProjectMetadata
 Request example:
 
 .. code:: json
+          
+          {"project_id": 1,
+           "values": {
+           "key1": "value1"}
+        
 
-    {
-        "jsonrpc": "2.0",
-        "method": "saveProjectMetadata",
-        "id": 1797076613,
-        "params": {
-            "project_id": 1,
-            "values": {
-                "key1": "value1"
-            }
-        }
-    }
 
 Response example:
 
@@ -111,7 +92,7 @@ Response example:
         "result": true
     }
 
-removeProjectMetadata
+DELTE: projectmetadata/projectmetadata
 ---------------------
 
 -  Purpose: **Remove a project metadata**
@@ -127,15 +108,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeProjectMetadata",
-        "id": 1797076613,
-        "params": {
-            "project_id": 1,
-            "name": "my key"
-        }
-    }
+      {"project_id": 1,
+       "name": "my key"}
 
 Response example:
 

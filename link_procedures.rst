@@ -1,7 +1,8 @@
 Link API Procedures
 ===================
 
-getAllLinks
+
+GET: link/alllinks
 -----------
 
 -  Purpose: **Get the list of possible relations between tasks**
@@ -13,11 +14,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllLinks",
-        "id": 113057196
-    }
 
 Response example:
 
@@ -85,7 +81,7 @@ Response example:
         ]
     }
 
-getOppositeLinkId
+GET: link/oppositelinkid
 -----------------
 
 -  Purpose: **Get the opposite link id of a task link**
@@ -100,14 +96,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getOppositeLinkId",
-        "id": 407062448,
-        "params": [
-            2
-        ]
-    }
+     [ 2 ]
 
 Response example:
 
@@ -119,7 +108,7 @@ Response example:
         "result": "3"
     }
 
-getLinkByLabel
+GET: link/linkbylabel
 --------------
 
 -  Purpose: **Get a link by label**
@@ -133,15 +122,8 @@ getLinkByLabel
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getLinkByLabel",
-        "id": 1796123316,
-        "params": [
-            "blocks"
-        ]
-    }
+    
+  ["blocks"]
 
 Response example:
 
@@ -157,7 +139,7 @@ Response example:
         }
     }
 
-getLinkById
+GET: link/linkbyid
 -----------
 
 -  Purpose: **Get a link by id**
@@ -171,15 +153,8 @@ getLinkById
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getLinkById",
-        "id": 1190238402,
-        "params": [
-            4
-        ]
-    }
+   
+  [ 4 ]
 
 Response example:
 
@@ -195,7 +170,7 @@ Response example:
         }
     }
 
-createLink
+POST: link/task
 ----------
 
 -  Purpose: **Create a new task relation**
@@ -211,15 +186,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createLink",
-        "id": 1040237496,
-        "params": [
-            "foo",
-            "bar"
-        ]
-    }
+     [ "foo",
+       "bar" ]
 
 Response example:
 
@@ -231,7 +199,7 @@ Response example:
         "result": 13
     }
 
-updateLink
+PUT: link/link
 ----------
 
 -  Purpose: **Update a link**
@@ -247,17 +215,11 @@ updateLink
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "updateLink",
-        "id": 2110446926,
-        "params": [
+          [
             "14",
             "12",
             "boo"
-        ]
-    }
+                 ]
 
 Response example:
 
@@ -269,7 +231,7 @@ Response example:
         "result": true
     }
 
-removeLink
+DELTE: link/link
 ----------
 
 -  Purpose: **Remove a link**
@@ -284,14 +246,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeLink",
-        "id": 2136522739,
-        "params": [
-            "14"
-        ]
-    }
+     ["14"]
 
 Response example:
 

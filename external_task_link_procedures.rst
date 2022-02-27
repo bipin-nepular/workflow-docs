@@ -1,7 +1,7 @@
 External Task Link API Procedures
 =================================
 
-getExternalTaskLinkTypes
+GET: external/externaltasklinktypes
 ------------------------
 
 -  Purpose: **Get all registered external link providers**
@@ -13,7 +13,7 @@ Request example:
 
 .. code:: json
 
-    
+
 
 Response example:
 
@@ -30,7 +30,7 @@ Response example:
         "id": 477370568
     }
 
-getExternalTaskLinkProviderDependencies
+GET: external/externaltasklinkproviderdependencies
 ---------------------------------------
 
 -  Purpose: **Get available dependencies for a given provider**
@@ -45,9 +45,11 @@ Request example:
 
 .. code:: json
 
+
     {
     "provider_name" : "weblink"
     }
+
 
 Response example:
 
@@ -61,7 +63,8 @@ Response example:
         "id": 124790226
     }
 
-POST: externaltasklink
+
+POST: external/externaltasklink
 ----------------------
 
 -  Purpose: **Create a new external link**
@@ -79,6 +82,7 @@ POST: externaltasklink
 Request example:
 
 .. code:: json
+
  
  {
     "task_id" : 1,
@@ -99,6 +103,7 @@ Response example:
         "id": 924217495
     }
 
+
 PUT: externaltasklink/:link_id
 ----------------------
 
@@ -118,6 +123,7 @@ Request example:
 
 .. code:: json
 
+
     {
        
             "task_id":9,
@@ -135,7 +141,8 @@ Response example:
         "id": 1123562620
     }
 
-GET: externaltasklink/:link_id
+
+GET: external/externaltasklink/:link_id
 -----------------------
 
 -  Purpose: **Get an external task link**
@@ -152,6 +159,7 @@ Request example:
 .. code:: json
 
     {task_id: 9}
+
 
 Response example:
 
@@ -173,7 +181,8 @@ Response example:
         "id": 2107066744
     }
 
-GET: allexternaltasklinks
+
+GET: external/allexternaltasklinks
 -----------------------
 
 -  Purpose: **Get all external links attached to a task**
@@ -189,6 +198,7 @@ Request example:
 .. code:: json
 
     {task_id: 9}
+
 
 Response example:
 
@@ -216,7 +226,8 @@ Response example:
         "id": 2069307223
     }
 
-DELETE: externaltasklink/:link_id
+
+DELETE: external/externaltasklink/:link_id
 ----------------------
 
 -  Purpose: **Remove an external link**

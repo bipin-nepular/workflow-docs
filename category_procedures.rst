@@ -1,14 +1,14 @@
 Category API Procedures
 =======================
 
-createCategory
+POST: category/category
 --------------
 
 -  Purpose: **Create a new category**
 -  Parameters:
 -  **project_id** (integer, required)
 
-   -  **name** (string, required, must be unique for the given project)
+-  **name** (string, required, must be unique for the given project)
 
 -  Result on success: **category_id**
 -  Result on failure: **false**
@@ -16,16 +16,10 @@ createCategory
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "createCategory",
-        "id": 541909890,
-        "params": {
-            "name": "Super category",
-            "project_id": 1
-        }
-    }
+   
+   {
+     "name": "Super category",
+   }
 
 Response example:
 
@@ -37,7 +31,7 @@ Response example:
         "result": 4
     }
 
-getCategory
+GET: category/category/:id
 -----------
 
 -  Purpose: **Get category information**
@@ -51,15 +45,8 @@ getCategory
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getCategory",
-        "id": 203539163,
-        "params": {
-            "category_id": 1
-        }
-    }
+           
+   
 
 Response example:
 
@@ -76,7 +63,7 @@ Response example:
         }
     }
 
-getAllCategories
+GET: category/allcategories
 ----------------
 
 -  Purpose: **Get all available categories**
@@ -90,15 +77,10 @@ getAllCategories
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllCategories",
-        "id": 1261777968,
-        "params": {
-            "project_id": 1
-        }
-    }
+ 
+      {"project_id": 1}
+        
+   
 
 Response example:
 
@@ -116,7 +98,7 @@ Response example:
         ]
     }
 
-updateCategory
+PUT: category/category
 --------------
 
 -  Purpose: **Update a category**
@@ -132,15 +114,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateCategory",
-        "id": 570195391,
-        "params": {
-            "id": 1,
-            "name": "Renamed category"
-        }
-    }
+            {"id": 1,
+            "name": "Renamed category"}
 
 Response example:
 
@@ -152,7 +127,7 @@ Response example:
         "result": true
     }
 
-removeCategory
+DELTE: category/category
 --------------
 
 -  Purpose: **Remove a category**
@@ -167,14 +142,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeCategory",
-        "id": 88225706,
-        "params": {
-            "category_id": 1
-        }
-    }
+  {"category_id": 1}
+    
 
 Response example:
 

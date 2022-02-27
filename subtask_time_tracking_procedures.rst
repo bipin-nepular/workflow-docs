@@ -1,7 +1,7 @@
 Subtask Time Tracking API procedures
 ====================================
 
-hasSubtaskTimer
+GET: subtaskttime/subtasktimer
 ---------------
 
 -  Purpose: **Check if a timer is started for the given subtask and
@@ -18,7 +18,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"hasSubtaskTimer","id":1786995697,"params":[2,4]}
+    [2,4]
 
 Response example:
 
@@ -30,7 +30,7 @@ Response example:
         "id": 1786995697
     }
 
-setSubtaskStartTime
+PUT: subtaskttime/subtaskstarttime
 -------------------
 
 -  Purpose: **Start subtask timer for a user**
@@ -46,7 +46,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"setSubtaskStartTime","id":1168991769,"params":[2,4]}
+    [2,4]
 
 Response example:
 
@@ -58,7 +58,7 @@ Response example:
         "id": 1168991769
     }
 
-setSubtaskEndTime
+PUT: subtaskttime/subtaskendtime
 -----------------
 
 -  Purpose: **Stop subtask timer for a user**
@@ -74,7 +74,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"setSubtaskEndTime","id":1026607603,"params":[2,4]}
+  [2,4]
 
 Response example:
 
@@ -86,7 +86,7 @@ Response example:
         "id": 1026607603
     }
 
-getSubtaskTimeSpent
+GET: subtaskttime/subtasktimespent
 -------------------
 
 -  Purpose: **Get time spent on a subtask for a user**
@@ -102,7 +102,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getSubtaskTimeSpent","id":738527378,"params":[2,4]}
+    [2,4]
 
 Response example:
 

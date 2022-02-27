@@ -1,7 +1,7 @@
 Project File API Procedures
 ===========================
 
-createProjectFile
+POST: projectfile/projectfile
 -----------------
 
 -  Purpose: **Create and upload a new project attachment**
@@ -20,16 +20,10 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createProjectFile",
-        "id": 94500810,
-        "params": [
-            1,
-            "My file",
-            "cGxhaW4gdGV4dCBmaWxl"
-        ]
-    }
+     [     1,
+          "My file",
+          "cGxhaW4gdGV4dCBmaWxl"
+        ]  
 
 Response example:
 
@@ -41,7 +35,7 @@ Response example:
         "result": 1
     }
 
-getAllProjectFiles
+GET: projectfile/allprojectfiles
 ------------------
 
 -  Purpose: **Get all files attached to a project**
@@ -55,14 +49,8 @@ getAllProjectFiles
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllProjectFiles",
-        "id": 1880662820,
-        "params": {
-            "project_id": 1
-        }
+    
+     {"project_id": 1 }
     }
 
 Response example:
@@ -88,7 +76,7 @@ Response example:
         ]
     }
 
-getProjectFile
+GET: projectfile/projectfile
 --------------
 
 -  Purpose: **Get file information**
@@ -103,16 +91,10 @@ getProjectFile
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectFile",
-        "id": 318676852,
-        "params": [
-            "42",
-            "1"
+        [    
+        "42",
+        "1"
         ]
-    }
 
 Response example:
 
@@ -133,7 +115,7 @@ Response example:
         }
     }
 
-downloadProjectFile
+GET: projectfile/projectfile
 -------------------
 
 -  Purpose: **Download project file contents (encoded in base64)**
@@ -149,15 +131,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "downloadProjectFile",
-        "id": 235943344,
-        "params": [
-            "1",
-            "1"
-        ]
-    }
+       [    "1",
+            "1"   ]
 
 Response example:
 
@@ -169,7 +144,7 @@ Response example:
         "result": "cGxhaW4gdGV4dCBmaWxl"
     }
 
-removeProjectFile
+DELTE: projectfile/projectfile
 -----------------
 
 -  Purpose: **Remove a file associated to a project**
@@ -184,16 +159,10 @@ removeProjectFile
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "removeProjectFile",
-        "id": 447036524,
-        "params": [
+        [
             "1",
             "1"
-        ]
-    }
+                 ]
 
 Response example:
 
@@ -205,7 +174,7 @@ Response example:
         "result": true
     }
 
-removeAllProjectFiles
+DELTE: projectfile/allprojectfiles
 ---------------------
 
 -  Purpose: **Remove all files associated to a project**
@@ -220,14 +189,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeAllProjectFiles",
-        "id": 593312993,
-        "params": {
-            "project_id": 1
-        }
-    }
+     { "project_id": 1 }
 
 Response example:
 

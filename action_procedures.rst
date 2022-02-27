@@ -1,7 +1,7 @@
 Automatic Actions API Procedures
 ================================
 
-getAvailableActions
+GET: /automatic/availableactions
 -------------------
 
 -  Purpose: **Get list of available automatic actions**
@@ -13,11 +13,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAvailableActions",
-        "id": 1217735483
-    }
+    null
 
 Response example:
 
@@ -48,7 +44,7 @@ Response example:
         }
     }
 
-getAvailableActionEvents
+GET: /automatic/availableactionevents
 ------------------------
 
 -  Purpose: **Get list of available events for actions**
@@ -60,11 +56,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAvailableActionEvents",
-        "id": 2116665643
-    }
+    null
 
 Response example:
 
@@ -95,7 +87,7 @@ Response example:
         }
     }
 
-getCompatibleActionEvents
+GET: automatic/compatibleactionevents
 -------------------------
 
 -  Purpose: **Get list of events compatible with an action**
@@ -110,14 +102,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getCompatibleActionEvents",
-        "id": 899370297,
-        "params": [
-            "\\Workflow\\Action\\TaskClose"
-        ]
-    }
+     
+     ["\\Kanboard\\Action\\TaskAssignCurrentUser"]
+   
 
 Response example:
 
@@ -136,7 +123,7 @@ Response example:
         }
     }
 
-getActions
+GET: automatic/actions/:project_id
 ----------
 
 -  Purpose: **Get list of actions for a project**
@@ -151,14 +138,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getActions",
-        "id": 1433237746,
-        "params": [
-            "1"
-        ]
-    }
+    
+    null
+    
 
 Response example:
 
@@ -181,7 +163,7 @@ Response example:
         ]
     }
 
-createAction
+POST: automatic/actions/:project_id
 ------------
 
 -  Purpose: **Create an action**
@@ -200,19 +182,15 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "createAction",
-        "id": 1433237746,
-        "params": {
-            "project_id" : "2",
-            "event_name" : "task.move.column",
-            "action_name" : "\\Workflow\\Action\\TaskAssignSpecificUser",
-            "params" : {
-                "column_id" : "3",
-                "user_id" : "2"
+        "event_name" : "task.move.column",
+        "action_name" : "\\Kanboard\\Action\\TaskAssignSpecificUser",
+        "params" : {
+            "column_id" : "3",
+            "user_id" : "2"
             }
-        }
-    }
+     }
+        
+    
 
 Response example:
 
@@ -224,7 +202,7 @@ Response example:
         "result": 14
     }
 
-removeAction
+DELTE: automatic/actions/:action_id
 ------------
 
 -  Purpose: **Remove an action**
@@ -238,15 +216,8 @@ removeAction
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "removeAction",
-        "id": 1510741671,
-        "params": [
-            1
-        ]
-    }
+     null
+    
 
 Response example:
 

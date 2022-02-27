@@ -1,7 +1,7 @@
 Task API Procedures
 ===================
 
-createTask
+POST: task/task
 ----------
 
 -  Purpose: **Create a new task**
@@ -34,12 +34,7 @@ createTask
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "createTask",
-        "id": 1176509098,
-        "params": {
+       {
             "owner_id": 1,
             "creator_id": 0,
             "date_due": "",
@@ -54,9 +49,8 @@ Request example:
             "recurrence_trigger": 0,
             "recurrence_factor": 0,
             "recurrence_timeframe": 0,
-            "recurrence_basedate": 0
-        }
-    }
+            "recurrence_basedate": 0 }
+    
 
 Response example:
 
@@ -68,7 +62,7 @@ Response example:
         "result": 3
     }
 
-getTask
+GET: taskmetadata/task/:id
 -------
 
 -  Purpose: **Get task by the unique id**
@@ -83,14 +77,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTask",
-        "id": 700738119,
-        "params": {
-            "task_id": 1
-        }
-    }
 
 Response example:
 
@@ -138,7 +124,7 @@ Response example:
         }
     }
 
-getTaskByReference
+GET: taskmetadata/taskbyreference
 ------------------
 
 -  Purpose: **Get task by the external reference**
@@ -153,16 +139,9 @@ getTaskByReference
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "getTaskByReference",
-        "id": 1992081213,
-        "params": {
-            "project_id": 1,
-            "reference": "TICKET-1234"
-        }
-    }
+           
+           {"project_id": 1,
+            "reference": "TICKET-1234"}
 
 Response example:
 
@@ -205,7 +184,7 @@ Response example:
         }
     }
 
-getAllTasks
+GET: taskmetadata/alltasks
 -----------
 
 -  Purpose: **Get all available tasks**
@@ -220,17 +199,10 @@ getAllTasks
 
 Request example to fetch all tasks on the board:
 
-.. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllTasks",
-        "id": 133280317,
-        "params": {
-            "project_id": 1,
-            "status_id": 1
-        }
-    }
+ {"project_id": 1,
+   "status_id": 1 }
+    
 
 Response example:
 
@@ -323,7 +295,7 @@ Response example:
         ]
     }
 
-getOverdueTasks
+GET: taskmetadata/overduetasks/:id
 ---------------
 
 -  Purpose: **Get all overdue tasks**
@@ -334,11 +306,6 @@ Request example to fetch all tasks on the board:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getOverdueTasks",
-        "id": 133280317
-    }
 
 Response example:
 
@@ -369,7 +336,7 @@ Response example:
         ]
     }
 
-getOverdueTasksByProject
+ GET: taskmetadata/overduetasksbyproject/:id
 ------------------------
 
 -  Purpose: **Get all overdue tasks for a special project**
@@ -380,14 +347,6 @@ Request example to fetch all tasks on the board:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getOverdueTasksByProject",
-        "id": 133280317,
-        "params": {
-            "project_id": 1
-        }
-    }
 
 Response example:
 
@@ -418,7 +377,7 @@ Response example:
         ]
     }
 
-updateTask
+PUT: taskmetadata/task
 ----------
 
 -  Purpose: **Update a task**
@@ -449,15 +408,9 @@ Request example to change the task color:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateTask",
-        "id": 1406803059,
-        "params": {
-            "id": 1,
-            "color_id": "blue"
-        }
-    }
+     {"id": 1,
+     "color_id": "blue"}
+    
 
 Response example:
 
@@ -469,7 +422,7 @@ Response example:
         "result": true
     }
 
-openTask
+PUT: taskmetadata/task/:id
 --------
 
 -  Purpose: **Set a task to the status open**
@@ -484,14 +437,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "openTask",
-        "id": 1888531925,
-        "params": {
-            "task_id": 1
-        }
-    }
 
 Response example:
 
@@ -503,7 +448,7 @@ Response example:
         "result": true
     }
 
-closeTask
+PUT: taskmetadata/task/:id
 ---------
 
 -  Purpose: **Set a task to the status close**
@@ -518,15 +463,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "closeTask",
-        "id": 1654396960,
-        "params": {
-            "task_id": 1
-        }
-    }
-
 Response example:
 
 .. code:: json
@@ -537,7 +473,7 @@ Response example:
         "result": true
     }
 
-removeTask
+DELTE: taskmetadata/task/:id
 ----------
 
 -  Purpose: **Remove a task**
@@ -552,14 +488,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeTask",
-        "id": 1423501287,
-        "params": {
-            "task_id": 1
-        }
-    }
 
 Response example:
 
@@ -571,7 +499,7 @@ Response example:
         "result": true
     }
 
-moveTaskPosition
+PUT: taskmetadata/taskposition
 ----------------
 
 -  Purpose: **Move a task to another column, position or swimlane inside
@@ -590,19 +518,12 @@ moveTaskPosition
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "moveTaskPosition",
-        "id": 117211800,
-        "params": {
-            "project_id": 1,
+         
+           { "project_id": 1,
             "task_id": 1,
             "column_id": 2,
             "position": 1,
-            "swimlane_id": 1
-        }
-    }
+            "swimlane_id": 1}
 
 Response example:
 
@@ -614,7 +535,7 @@ Response example:
         "result": true
     }
 
-moveTaskToProject
+PUT: taskmetadata/tasktoproject
 -----------------
 
 -  Purpose: **Move a task to another project**
@@ -634,15 +555,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "moveTaskToProject",
-        "id": 15775829,
-        "params": [
-            4,
-            5
-        ]
-    }
+     [ 4,
+       5 ]
+    
 
 Response example:
 
@@ -654,7 +569,8 @@ Response example:
         "result": true
     }
 
-duplicateTaskToProject
+
+POST: taskmetadata/tasktoproject
 ----------------------
 
 -  Purpose: **Move a task to another column or another position**
@@ -674,15 +590,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "duplicateTaskToProject",
-        "id": 1662458687,
-        "params": [
-            5,
-            7
-        ]
-    }
+     [ 5,
+       7 ]
+    
 
 Response example:
 
@@ -694,7 +604,7 @@ Response example:
         "result": 6
     }
 
-searchTasks
+POST: taskmetadata/tasks
 -----------
 
 -  Purpose: **Find tasks by using the search engine**
@@ -710,15 +620,9 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "searchTasks",
-        "id": 1468511716,
-        "params": {
-            "project_id": 2,
-            "query": "assignee:nobody"
-        }
-    }
+    {"project_id": 2,
+     "query": "assignee:nobody"}
+    
 
 Response example:
 

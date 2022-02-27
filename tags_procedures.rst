@@ -1,7 +1,7 @@
 Tags API Procedures
 ===================
 
-getAllTags
+GET: tags/alltags/:id
 ----------
 
 -  Purpose: **Get all tags**
@@ -13,7 +13,6 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getAllTags","id":45253426}
 
 Response example:
 
@@ -31,7 +30,7 @@ Response example:
         "id": 45253426
     }
 
-getTagsByProject
+GET: tags/tagsbyproject
 ----------------
 
 -  Purpose: **Get all tags for a given project**
@@ -46,7 +45,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getTagsByProject","id":1217591720,"params":[33]}
+    [33]
 
 Response example:
 
@@ -64,7 +63,7 @@ Response example:
         "id": 1217591720
     }
 
-createTag
+POST: tags/tag
 ---------
 
 -  Purpose: **Create a new tag**
@@ -80,7 +79,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"createTag","id":1775436017,"params":[33,"some tag"]}
+    [33,"some tag"]
 
 Response example:
 
@@ -92,7 +91,7 @@ Response example:
         "id": 1775436017
     }
 
-updateTag
+PUT: tags/Tag
 ---------
 
 -  Purpose: **Rename a tag**
@@ -108,7 +107,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"updateTag","id":2037516512,"params":["1","another tag"]}
+ ["1","another tag"]
 
 Response example:
 
@@ -120,7 +119,7 @@ Response example:
         "id": 2037516512
     }
 
-removeTag
+DELTE: tags/Tag/:id
 ---------
 
 -  Purpose: **removeTag**
@@ -135,7 +134,6 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"removeTag","id":907581298,"params":["1"]}
 
 Response example:
 
@@ -147,7 +145,7 @@ Response example:
         "id": 907581298
     }
 
-setTaskTags
+POST: tags/tasktags
 -----------
 
 -  Purpose: **Assign/Create/Update tags for a task**
@@ -164,7 +162,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"setTaskTags","id":1524522873,"params":[39,17,["tag1","tag2"]]}
+ [39,17,["tag1","tag2"]]
 
 Response example:
 
@@ -176,7 +174,7 @@ Response example:
         "id": 1524522873
     }
 
-getTaskTags
+GET: tags/tasktags/:id
 -----------
 
 -  Purpose: **Get assigned tags to a task**
@@ -191,7 +189,6 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getTaskTags","id":1667157705,"params":[17]}
 
 Response example:
 

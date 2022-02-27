@@ -1,7 +1,7 @@
 Task File API Procedures
 ========================
 
-createTaskFile
+POST: taskfile/taskfile
 --------------
 
 -  Purpose: **Create and upload a new task attachment**
@@ -21,17 +21,11 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createTaskFile",
-        "id": 94500810,
-        "params": [
-            1,
-            1,
-            "My file",
-            "cGxhaW4gdGV4dCBmaWxl"
-        ]
-    }
+     [ 1,
+       1,
+      "My file",
+      "cGxhaW4gdGV4dCBmaWxl"]
+    
 
 Response example:
 
@@ -43,7 +37,7 @@ Response example:
         "result": 1
     }
 
-getAllTaskFiles
+GET: taskfile/alltaskfiles/:id
 ---------------
 
 -  Purpose: **Get all files attached to task**
@@ -58,14 +52,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllTaskFiles",
-        "id": 1880662820,
-        "params": {
-            "task_id": 1
-        }
-    }
 
 Response example:
 
@@ -90,7 +76,7 @@ Response example:
         ]
     }
 
-getTaskFile
+GET: taskfile/taskFile/:id
 -----------
 
 -  Purpose: **Get file information**
@@ -105,14 +91,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getTaskFile",
-        "id": 318676852,
-        "params": [
-            "1"
-        ]
-    }
 
 Response example:
 
@@ -133,7 +111,7 @@ Response example:
         }
     }
 
-downloadTaskFile
+POST: taskfile/taskfile/:id
 ----------------
 
 -  Purpose: **Download file contents (encoded in base64)**
@@ -148,14 +126,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "downloadTaskFile",
-        "id": 235943344,
-        "params": [
-            "1"
-        ]
-    }
 
 Response example:
 
@@ -167,7 +137,7 @@ Response example:
         "result": "cGxhaW4gdGV4dCBmaWxl"
     }
 
-removeTaskFile
+DELTE: taskfile/taskfile/:id
 --------------
 
 -  Purpose: **Remove file**
@@ -182,14 +152,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeTaskFile",
-        "id": 447036524,
-        "params": [
-            "1"
-        ]
-    }
 
 Response example:
 
@@ -201,7 +163,7 @@ Response example:
         "result": true
     }
 
-removeAllTaskFiles
+DELTE: taskfile/alltaskfiles
 ------------------
 
 -  Purpose: **Remove all files associated to a task**

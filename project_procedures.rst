@@ -1,7 +1,7 @@
 Project API Procedures
 ======================
 
-createProject
+POST: project/project
 -------------
 
 -  Purpose: **Create a new project**
@@ -21,14 +21,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createProject",
-        "id": 1797076613,
-        "params": {
-            "name": "PHP client"
-        }
-    }
+     {"name": "PHP client"}
+    
 
 Response example:
 
@@ -40,7 +34,7 @@ Response example:
         "result": 2
     }
 
-getProjectById
+GET: project/projectbyid/:id
 --------------
 
 -  Purpose: **Get project information**
@@ -55,14 +49,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectById",
-        "id": 226760253,
-        "params": {
-            "project_id": 1
-        }
-    }
+     null
+    
 
 Response example:
 
@@ -91,7 +79,7 @@ Response example:
         }
     }
 
-getProjectByName
+GET: project/projectbyname
 ----------------
 
 -  Purpose: **Get project information**
@@ -106,14 +94,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectByName",
-        "id": 1620253806,
-        "params": {
-            "name": "Test"
-        }
-    }
+     {"name": "Test"}
+
 
 Response example:
 
@@ -142,7 +124,7 @@ Response example:
         }
     }
 
-getProjectByIdentifier
+GET: project/projectbyidentifier
 ----------------------
 
 -  Purpose: **Get project information**
@@ -157,14 +139,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectByIdentifier",
-        "id": 1620253806,
-        "params": {
-            "identifier": "TEST"
-        }
-    }
+     {"identifier": "TEST"}
+
 
 Response example:
 
@@ -193,7 +169,7 @@ Response example:
         }
     }
 
-getProjectByEmail
+GET: project/projectbyemail
 -----------------
 
 -  Purpose: **Get project information**
@@ -208,14 +184,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectByEmail",
-        "id": 1620253806,
-        "params": {
-            "email": "my_project@my_domain.tld"
-        }
-    }
+     {"email": "my_project@my_domain.tld"}
+    
 
 Response example:
 
@@ -245,7 +215,7 @@ Response example:
         }
     }
 
-getAllProjects
+GET: project/allprojects
 --------------
 
 -  Purpose: **Get all available projects**
@@ -260,11 +230,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllProjects",
-        "id": 2134420212
-    }
 
 Response example:
 
@@ -295,7 +260,7 @@ Response example:
         ]
     }
 
-updateProject
+PUT: project/project/:id
 -------------
 
 -  Purpose: **Update a project**
@@ -317,14 +282,8 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc": "2.0",
-        "method": "updateProject",
-        "id": 1853996288,
-        "params": {
-            "project_id": 1,
-            "name": "PHP client update"
-        }
-    }
+     "name": "PHP client update"}
+    
 
 Response example:
 
@@ -336,7 +295,7 @@ Response example:
         "result": true
     }
 
-removeProject
+DELTE: project/project/:id
 -------------
 
 -  Purpose: **Remove a project**
@@ -348,14 +307,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeProject",
-        "id": 46285125,
-        "params": {
-            "project_id": "2"
-        }
-    }
+     null
+    
 
 Response example:
 
@@ -367,7 +320,7 @@ Response example:
         "result": true
     }
 
-enableProject
+PUT: project/enable/:id
 -------------
 
 -  Purpose: **Enable a project**
@@ -382,14 +335,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "enableProject",
-        "id": 1775494839,
-        "params": [
-            "1"
-        ]
-    }
+    
+
 
 Response example:
 
@@ -401,7 +348,8 @@ Response example:
         "result": true
     }
 
-disableProject
+
+PUT: project/disable/:id
 --------------
 
 -  Purpose: **Disable a project**
@@ -416,14 +364,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "disableProject",
-        "id": 1734202312,
-        "params": [
-            "1"
-        ]
-    }
+     
 
 Response example:
 
@@ -435,7 +376,9 @@ Response example:
         "result": true
     }
 
-enableProjectPublicAccess
+
+
+PUT: project/enablepublicaccess/:id
 -------------------------
 
 -  Purpose: **Enable public access for a given project**
@@ -450,14 +393,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "enableProjectPublicAccess",
-        "id": 103792571,
-        "params": [
-            "1"
-        ]
-    }
+ 
+    
 
 Response example:
 
@@ -469,7 +406,7 @@ Response example:
         "result": true
     }
 
-disableProjectPublicAccess
+PUT: project/disablepublicaccess/:id
 --------------------------
 
 -  Purpose: **Disable public access for a given project**
@@ -484,14 +421,8 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "disableProjectPublicAccess",
-        "id": 942472945,
-        "params": [
-            "1"
-        ]
-    }
+    
+
 
 Response example:
 
@@ -503,7 +434,7 @@ Response example:
         "result": true
     }
 
-getProjectActivity
+GET: project/projectactivity/:id
 ------------------
 
 -  Purpose: **Get activity stream for a project**
@@ -516,18 +447,10 @@ getProjectActivity
 
 Request example:
 
-.. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectActivity",
-        "id": 942472945,
-        "params": {
-            "project_id": 1
-        }
-    }
+    
 
-getProjectActivities
+GET: project/projectactivities
 --------------------
 
 -  Purpose: **Get Activityfeed for Project(s)**
@@ -542,11 +465,5 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getProjectActivities",
-        "id": 942472945,
-        "params": {
-            "project_ids": [1,2]
-        }
-    }
+     { "project_ids": [1,2]  }
+    

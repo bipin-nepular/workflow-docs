@@ -1,7 +1,7 @@
 User API Procedures
 ===================
 
-createUser
+POST: user/user
 ----------
 
 -  Purpose: **Create a new user**
@@ -20,16 +20,10 @@ createUser
 Request example:
 
 .. code:: json
+       
+        {"username": "biloute",
+        "password": "123456"}
 
-    {
-        "jsonrpc": "2.0",
-        "method": "createUser",
-        "id": 1518863034,
-        "params": {
-            "username": "biloute",
-            "password": "123456"
-        }
-    }
 
 Response example:
 
@@ -41,7 +35,7 @@ Response example:
         "result": 22
     }
 
-createLdapUser
+POST: user/ldapuser
 --------------
 
 -  Purpose: **Create a new user authentified by LDAP**
@@ -59,15 +53,10 @@ anonymous mode.
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "createLdapUser",
-        "id": 1518863034,
-        "params": {
-            "username": "my_ldap_user"
-        }
-    }
+      {
+         "username":"nepular"
+      }
+      
 
 Response example:
 
@@ -79,7 +68,7 @@ Response example:
         "result": 22
     }
 
-getUser
+GET: user/user/:user_id
 -------
 
 -  Purpose: **Get user information**
@@ -94,14 +83,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getUser",
-        "id": 1769674781,
-        "params": {
-            "user_id": 1
-        }
-    }
+    
 
 Response example:
 
@@ -124,7 +106,7 @@ Response example:
         }
     }
 
-getUserByName
+GET: user/userbyname
 -------------
 
 -  Purpose: **Get user information**
@@ -138,15 +120,10 @@ getUserByName
 Request example:
 
 .. code:: json
+      {
+         "username" : "nepular"
+      }
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getUserByName",
-        "id": 1769674782,
-        "params": {
-            "username": "biloute"
-        }
-    }
 
 Response example:
 
@@ -169,7 +146,7 @@ Response example:
         }
     }
 
-getAllUsers
+GET: user/allusers
 -----------
 
 -  Purpose: **Get all available users**
@@ -184,11 +161,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "getAllUsers",
-        "id": 1438712131
-    }
 
 Response example:
 
@@ -212,7 +184,8 @@ Response example:
         ]
     }
 
-updateUser
+
+PUT: user/user/:id
 ----------
 
 -  Purpose: **Update a user**
@@ -232,15 +205,13 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "updateUser",
-        "id": 322123657,
-        "params": {
-            "id": 1,
-            "role": "app-manager"
-        }
-    }
+     {
+      "username" : "nepular",
+      "name" : "updated name",
+      "email": "updated@email.com",
+      "role": "app-manager",
+      }
+    
 
 Response example:
 
@@ -252,7 +223,7 @@ Response example:
         "result": true
     }
 
-removeUser
+DELTE: user/user/:user_id
 ----------
 
 -  Purpose: **Remove a user**
@@ -267,14 +238,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "removeUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 
@@ -286,7 +249,7 @@ Response example:
         "result": true
     }
 
-disableUser
+PUT: user/disableuser/:id
 -----------
 
 -  Purpose: **Disable a user**
@@ -300,15 +263,7 @@ disableUser
 Request example:
 
 .. code:: json
-
-    {
-        "jsonrpc": "2.0",
-        "method": "disableUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
+     
 
 Response example:
 
@@ -320,7 +275,7 @@ Response example:
         "result": true
     }
 
-enableUser
+PUT: user/enableuser/:user_id
 ----------
 
 -  Purpose: **Enable a user**
@@ -335,15 +290,7 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "enableUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
-
+   
 Response example:
 
 .. code:: json
@@ -354,7 +301,7 @@ Response example:
         "result": true
     }
 
-isActiveUser
+GET: user/isactiveuser/:user_id
 ------------
 
 -  Purpose: **Check if a user is active**
@@ -369,14 +316,6 @@ Request example:
 
 .. code:: json
 
-    {
-        "jsonrpc": "2.0",
-        "method": "isActiveUser",
-        "id": 2094191872,
-        "params": {
-            "user_id": 1
-        }
-    }
 
 Response example:
 
