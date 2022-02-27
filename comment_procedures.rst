@@ -1,7 +1,7 @@
 Comment API Procedures
 ======================
 
-POST: comment/comment
+POST: comment/comment/:task_id
 -------------
 
 -  Purpose: **Create a new comment**
@@ -19,7 +19,6 @@ Request example:
 .. code:: json
 
          {
-            "task_id": 1,
             "user_id": 1,
             "content": "Comment #1"   }
 
@@ -33,7 +32,7 @@ Response example:
         "result": 11
     }
 
-GET: comment/comment
+GET: comment/comment/:comment_id
 ----------
 
 -  Purpose: **Get comment information**
@@ -48,7 +47,7 @@ Request example:
 
 .. code:: json
           
-  { "comment_id": 1  }
+  null
             
 
 Response example:
@@ -106,7 +105,7 @@ Response example:
         ]
     }
 
-PUT: comment/comment
+PUT: comment/comment/:id
 -------------
 
 -  Purpose: **Update a comment**
@@ -122,7 +121,7 @@ Request example:
 
 .. code:: json
 
-     { "id": 1,
+     { 
        "content": "Comment #1 updated"
         }
 
@@ -136,7 +135,7 @@ Response example:
         "result": true
     }
 
-DELTE: comment/comment
+DELTE: comment/comment/:id
 -------------
 
 -  Purpose: **Remove a comment**
@@ -151,7 +150,7 @@ Request example:
 
 .. code:: json
        
-  {"comment_id": 1 }
+  null
     
 
 Response example:
