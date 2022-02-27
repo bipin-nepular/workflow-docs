@@ -84,7 +84,7 @@ Response example:
         }
     }
 
-PUT: column/changecolumnposition
+PUT: column/changecolumnposition/:id
 --------------------
 
 -  Purpose: **Change the column position**
@@ -117,7 +117,7 @@ Response example:
         "result": true
     }
 
-PUT: column/column
+PUT: column/column/:id
 ------------
 
 -  Purpose: **Update column properties**
@@ -135,9 +135,7 @@ Request example:
 
 .. code:: json
         
-         [ 2,
-          "Boo",
-           5 ]
+        
           
 
 Response example:
@@ -150,7 +148,7 @@ Response example:
         "result": true
     }
 
-POST: column/column
+POST: column/addcolumn/:project_id
 ---------
 
 -  Purpose: **Add a new column**
@@ -167,9 +165,12 @@ POST: column/column
 Request example:
 
 .. code:: json
-   
-    [   1,
-      "Boo" ]
+ 
+       {
+          "title" : "Awesome Column",
+          "task_limit" : 3,
+          "description" : "Awesome Description"
+       }
     
 
 Response example:
@@ -182,7 +183,7 @@ Response example:
         "result": 5
     }
 
-DELTE: column/column
+DELTE: column/column/:column_id
 ------------
 
 -  Purpose: **Remove a column**
@@ -197,7 +198,7 @@ Request example:
 
 .. code:: json
 
-   [ 1 ]
+      null
 
 Response example:
 
