@@ -102,9 +102,9 @@ Request example:
 
 .. code:: json
 
-    {   
-     ["\\Workflow\\Action\\TaskClose"]
-    }
+     
+     ["\\Kanboard\\Action\\TaskClose"]
+   
 
 Response example:
 
