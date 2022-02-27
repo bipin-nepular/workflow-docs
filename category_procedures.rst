@@ -31,7 +31,7 @@ Response example:
         "result": 4
     }
 
-GET: category/category
+GET: category/category/:id
 -----------
 
 -  Purpose: **Get category information**
@@ -46,8 +46,7 @@ Request example:
 
 .. code:: json
            
-          {"category_id": 1}
-    
+   
 
 Response example:
 
