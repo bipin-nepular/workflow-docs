@@ -13,7 +13,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkTypes","id":477370568}
+    
 
 Response example:
 
@@ -45,7 +45,7 @@ Request example:
 
 .. code:: json
 
-    {"jsonrpc":"2.0","method":"getExternalTaskLinkProviderDependencies","id":124790226,"params":["weblink"]}
+    ["weblink"]
 
 Response example:
 
@@ -59,7 +59,7 @@ Response example:
         "id": 124790226
     }
 
-createExternalTaskLink
+POST: externaltasklink/:task_id
 ----------------------
 
 -  Purpose: **Create a new external link**
@@ -77,8 +77,12 @@ createExternalTaskLink
 Request example:
 
 .. code:: json
-
-    {"jsonrpc":"2.0","method":"createExternalTaskLink","id":924217495,"params":[9,"http:\/\/localhost\/document.pdf","related","attachment"]}
+{
+    "url" : "http://localhost:99/document.pdf",
+    "dependency" : "related",
+    "type" : "attachment"
+}
+    
 
 Response example:
 
