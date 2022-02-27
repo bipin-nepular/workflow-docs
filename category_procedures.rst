@@ -8,7 +8,7 @@ POST: category/category
 -  Parameters:
 -  **project_id** (integer, required)
 
-   -  **name** (string, required, must be unique for the given project)
+-  **name** (string, required, must be unique for the given project)
 
 -  Result on success: **category_id**
 -  Result on failure: **false**
@@ -16,9 +16,9 @@ POST: category/category
 Request example:
 
 .. code:: json
-         {
-           "name": "Super category",
-         }
+   {
+     "name": "Super category",
+   }
 
 Response example:
 
