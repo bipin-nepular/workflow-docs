@@ -1,7 +1,7 @@
 Board API Procedures
 ====================
 
-GET:board/board
+GET:board/board/:id
 --------
 
 -  Purpose: **Get all necessary information to display a board**
@@ -16,7 +16,7 @@ Request example:
 
 .. code:: json
 
-     [ 1 ]
+  
     
 
 Response example:
