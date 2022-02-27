@@ -1,7 +1,7 @@
 External Task Link API Procedures
 =================================
 
-GET: External/externaltasklinktypes
+GET: external/externaltasklinktypes
 ------------------------
 
 -  Purpose: **Get all registered external link providers**
@@ -12,6 +12,7 @@ GET: External/externaltasklinktypes
 Request example:
 
 .. code:: json
+
 
 
 Response example:
@@ -44,7 +45,11 @@ Request example:
 
 .. code:: json
 
-    ["weblink"]
+
+    {
+    "provider_name" : "weblink"
+    }
+
 
 Response example:
 
@@ -57,6 +62,7 @@ Response example:
         },
         "id": 124790226
     }
+
 
 POST: external/externaltasklink
 ----------------------
@@ -77,7 +83,15 @@ Request example:
 
 .. code:: json
 
-    [9,"http:\/\/localhost\/document.pdf","related","attachment"]
+ 
+ {
+    "task_id" : 1,
+    "url" : "http://localhost:99/document.pdf",
+    "dependency" : "related",
+    "type" : "attachment",
+    "title": "TITLE LINK"
+ }
+    
 
 Response example:
 
@@ -89,7 +103,8 @@ Response example:
         "id": 924217495
     }
 
-PUT: external/externaltasklink
+
+PUT: externaltasklink/:link_id
 ----------------------
 
 -  Purpose: **Update external task link**
@@ -107,10 +122,14 @@ PUT: external/externaltasklink
 Request example:
 
 .. code:: json
-          {
+
+
+    {
+       
             "task_id":9,
-            "link_id":1,
-            "title":"New title" }
+            "title":"New title"
+     }
+    
 
 Response example:
 
@@ -122,7 +141,8 @@ Response example:
         "id": 1123562620
     }
 
-GET: external/externaltasklinkbyid
+
+GET: external/externaltasklink/:link_id
 -----------------------
 
 -  Purpose: **Get an external task link**
@@ -138,7 +158,8 @@ Request example:
 
 .. code:: json
 
-  [9,1]
+    {task_id: 9}
+
 
 Response example:
 
@@ -160,7 +181,8 @@ Response example:
         "id": 2107066744
     }
 
-GET:allexternaltasklinks
+
+GET: external/allexternaltasklinks
 -----------------------
 
 -  Purpose: **Get all external links attached to a task**
@@ -175,7 +197,8 @@ Request example:
 
 .. code:: json
 
-    [9]
+    {task_id: 9}
+
 
 Response example:
 
@@ -203,7 +226,8 @@ Response example:
         "id": 2069307223
     }
 
-DELTE: external/externaltasklink
+
+DELETE: external/externaltasklink/:link_id
 ----------------------
 
 -  Purpose: **Remove an external link**
@@ -219,7 +243,9 @@ Request example:
 
 .. code:: json
 
-  [9,1]
+    {
+    "task_id" : 1
+    }
 
 Response example:
 
