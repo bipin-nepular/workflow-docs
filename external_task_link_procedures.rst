@@ -45,7 +45,9 @@ Request example:
 
 .. code:: json
 
-    ["weblink"]
+    {
+    "provider_name" : "weblink
+    }
 
 Response example:
 
@@ -77,11 +79,12 @@ POST: externaltasklink/:task_id
 Request example:
 
 .. code:: json
-{
+ 
+ {
     "url" : "http://localhost:99/document.pdf",
     "dependency" : "related",
     "type" : "attachment"
-}
+ }
     
 
 Response example:
@@ -94,7 +97,7 @@ Response example:
         "id": 924217495
     }
 
-updateExternalTaskLink
+PUT: externaltasklink/:link_id
 ----------------------
 
 -  Purpose: **Update external task link**
@@ -114,15 +117,11 @@ Request example:
 .. code:: json
 
     {
-        "jsonrpc":"2.0",
-        "method":"updateExternalTaskLink",
-        "id":1123562620,
-        "params": {
+       
             "task_id":9,
-            "link_id":1,
             "title":"New title"
-        }
-    }
+     }
+    
 
 Response example:
 
