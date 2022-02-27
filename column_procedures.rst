@@ -53,7 +53,7 @@ Response example:
         ]
     }
 
-GET: column/column
+GET: column/column/:column_id
 ---------
 
 -  Purpose: **Get a single column**
@@ -67,8 +67,6 @@ GET: column/column
 Request example:
 
 .. code:: json
-
-  [ 2 ]  
 
 Response example:
 
