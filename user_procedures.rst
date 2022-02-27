@@ -185,7 +185,7 @@ Response example:
     }
 
 
-PUT: user/user
+PUT: user/user/:id
 ----------
 
 -  Purpose: **Update a user**
@@ -205,8 +205,12 @@ Request example:
 
 .. code:: json
 
-     { "id": 1,
-      "role": "app-manager"}
+     {
+      "username" : "nepular",
+      "name" : "updated name",
+      "email": "updated@email.com",
+      "role": "app-manager",
+      }
     
 
 Response example:
@@ -219,7 +223,7 @@ Response example:
         "result": true
     }
 
-DELTE: user/user/:id
+DELTE: user/user/:user_id
 ----------
 
 -  Purpose: **Remove a user**
@@ -245,7 +249,7 @@ Response example:
         "result": true
     }
 
-POST: user/user/:id
+PUT: user/disableuser/:id
 -----------
 
 -  Purpose: **Disable a user**
@@ -259,7 +263,7 @@ POST: user/user/:id
 Request example:
 
 .. code:: json
-
+     
 
 Response example:
 
@@ -271,7 +275,7 @@ Response example:
         "result": true
     }
 
-POST: user/user/:id
+PUT: user/enableuser/:user_id
 ----------
 
 -  Purpose: **Enable a user**
@@ -286,7 +290,7 @@ Request example:
 
 .. code:: json
 
-
+   
 Response example:
 
 .. code:: json
@@ -297,7 +301,7 @@ Response example:
         "result": true
     }
 
-GET: user/activeuser/:id
+GET: user/isactiveuser/:user_id
 ------------
 
 -  Purpose: **Check if a user is active**
