@@ -61,7 +61,7 @@ Response example:
         "id": 124790226
     }
 
-POST: externaltasklink/:task_id
+POST: externaltasklink
 ----------------------
 
 -  Purpose: **Create a new external link**
@@ -81,6 +81,7 @@ Request example:
 .. code:: json
  
  {
+    "task_id" : 1,
     "url" : "http://localhost:99/document.pdf",
     "dependency" : "related",
     "type" : "attachment",
