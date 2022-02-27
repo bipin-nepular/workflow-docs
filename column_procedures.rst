@@ -101,9 +101,10 @@ Request example:
 
 .. code:: json
     
-     [ 1,
-       2,
-       3 ]
+     {
+       "project_id" : 3,
+       "position" : 3
+     }
     
 
 Response example:
