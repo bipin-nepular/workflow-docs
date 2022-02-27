@@ -1,7 +1,7 @@
 Group Member API Procedures
 ===========================
 
-GET: Groupmember/membergroups
+GET: groupmember/membergroups/:user_id
 ---------------
 
 -  Purpose: **Get all groups for a given user**
@@ -16,7 +16,7 @@ Request example:
 
 .. code:: json
          
-  [ "1" ]
+ 
 
 Response example:
 
@@ -33,7 +33,7 @@ Response example:
         ]
     }
 
-GET: Groupmember/groupmembers
+GET: Groupmember/groupmembers/:group_id
 ---------------
 
 -  Purpose: **Get all members of a group**
@@ -48,7 +48,7 @@ Request example:
 
 .. code:: json
 
-      [ "1" ]
+      
 
 Response example:
 
@@ -80,7 +80,7 @@ Response example:
         ]
     }
 
-POST: groupmember/groupmember
+POST: groupmember/groupmember/:group_id
 --------------
 
 -  Purpose: **Add a user to a group**
@@ -96,8 +96,9 @@ Request example:
 
 .. code:: json
 
-     [   1,
-         1  ]
+     {
+     "user_id" :  1
+     }
     
 
 Response example:
@@ -110,7 +111,7 @@ Response example:
         "result": true
     }
 
-DELTE: groupmember/groupmember
+DELTE: groupmember/groupmember/:group_id
 -----------------
 
 -  Purpose: **Remove a user from a group**
@@ -126,8 +127,9 @@ Request example:
 
 .. code:: json
 
-     [  1,
-        1  ]
+     {
+     "user_id" :1
+     }
 
 Response example:
 
@@ -139,7 +141,7 @@ Response example:
         "result": true
     }
 
-PUT: groupmember/groupmember
+GET: groupmember/isgroupmember/:group_id
 -------------
 
 -  Purpose: **Check if a user is member of a group**
@@ -155,8 +157,9 @@ Request example:
 
 .. code:: json
 
-         [  1,
-            1 ]
+         {
+           "user_id": 1
+         }
 
 Response example:
 
