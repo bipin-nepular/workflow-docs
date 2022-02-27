@@ -16,6 +16,7 @@ POST: category/category
 Request example:
 
 .. code:: json
+   
    {
      "name": "Super category",
    }
