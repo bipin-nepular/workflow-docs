@@ -80,7 +80,7 @@ Request example:
  
       {"project_id": 1}
         
-    }
+   
 
 Response example:
 
