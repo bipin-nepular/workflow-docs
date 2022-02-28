@@ -34,6 +34,7 @@ POST: task/task
 Request example:
 
 .. code:: json
+
        {
             "owner_id": 1,
             "creator_id": 0,
@@ -49,7 +50,8 @@ Request example:
             "recurrence_trigger": 0,
             "recurrence_factor": 0,
             "recurrence_timeframe": 0,
-            "recurrence_basedate": 0 }
+            "recurrence_basedate": 0 
+            }
     
 
 Response example:
@@ -62,7 +64,7 @@ Response example:
         "result": 3
     }
 
-GET: taskmetadata/task/:id
+GET: task/task/:task_id
 -------
 
 -  Purpose: **Get task by the unique id**
@@ -124,7 +126,7 @@ Response example:
         }
     }
 
-GET: taskmetadata/taskbyreference
+GET: task/taskbyreference
 ------------------
 
 -  Purpose: **Get task by the external reference**
@@ -140,8 +142,10 @@ Request example:
 
 .. code:: json
            
-           {"project_id": 1,
-            "reference": "TICKET-1234"}
+           { 
+           "project_id": 1,
+            "reference": "TICKET-1234"
+            }
 
 Response example:
 
@@ -184,7 +188,7 @@ Response example:
         }
     }
 
-GET: taskmetadata/alltasks
+GET: task/alltasks
 -----------
 
 -  Purpose: **Get all available tasks**
@@ -295,7 +299,7 @@ Response example:
         ]
     }
 
-GET: taskmetadata/overduetasks/:id
+GET: task/overduetasks
 ---------------
 
 -  Purpose: **Get all overdue tasks**
@@ -336,7 +340,7 @@ Response example:
         ]
     }
 
- GET: taskmetadata/overduetasksbyproject/:id
+ GET: task/overduetasks
 ------------------------
 
 -  Purpose: **Get all overdue tasks for a special project**
@@ -346,7 +350,10 @@ Response example:
 Request example to fetch all tasks on the board:
 
 .. code:: json
-
+   
+   {
+   "project_id": 1
+   }
 
 Response example:
 
@@ -377,7 +384,7 @@ Response example:
         ]
     }
 
-PUT: taskmetadata/task
+PUT: task/task/:id
 ----------
 
 -  Purpose: **Update a task**
@@ -422,7 +429,7 @@ Response example:
         "result": true
     }
 
-PUT: taskmetadata/task/:id
+PUT: task/opentask/:task_id
 --------
 
 -  Purpose: **Set a task to the status open**
@@ -448,7 +455,7 @@ Response example:
         "result": true
     }
 
-PUT: taskmetadata/task/:id
+PUT: task/closetask/:id
 ---------
 
 -  Purpose: **Set a task to the status close**
@@ -473,7 +480,7 @@ Response example:
         "result": true
     }
 
-DELTE: taskmetadata/task/:id
+DELTE: task/task/:task_id
 ----------
 
 -  Purpose: **Remove a task**
@@ -499,7 +506,7 @@ Response example:
         "result": true
     }
 
-PUT: taskmetadata/taskposition
+PUT: task/movetask/:task_id
 ----------------
 
 -  Purpose: **Move a task to another column, position or swimlane inside
@@ -520,7 +527,6 @@ Request example:
 .. code:: json
          
            { "project_id": 1,
-            "task_id": 1,
             "column_id": 2,
             "position": 1,
             "swimlane_id": 1}
@@ -535,7 +541,7 @@ Response example:
         "result": true
     }
 
-PUT: taskmetadata/tasktoproject
+PUT: task/movetasktoproject/:task_id
 -----------------
 
 -  Purpose: **Move a task to another project**
@@ -555,8 +561,9 @@ Request example:
 
 .. code:: json
 
-     [ 4,
-       5 ]
+    {
+    "project_id" :1 
+    }
     
 
 Response example:
@@ -570,10 +577,10 @@ Response example:
     }
 
 
-POST: taskmetadata/tasktoproject
+POST: task/duplicatetasktoproject/:task_id
 ----------------------
 
--  Purpose: **Move a task to another column or another position**
+-  Purpose: **Duplicate Tasks to another column or project**
 -  Parameters:
 
    -  **task_id** (integer, required)
@@ -590,8 +597,9 @@ Request example:
 
 .. code:: json
 
-     [ 5,
-       7 ]
+    {
+    "project_id" : 4
+    }
     
 
 Response example:
@@ -604,7 +612,7 @@ Response example:
         "result": 6
     }
 
-POST: taskmetadata/tasks
+GET: task/tasks
 -----------
 
 -  Purpose: **Find tasks by using the search engine**
