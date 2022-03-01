@@ -1,7 +1,7 @@
 Column API Procedures
 =====================
 
-GET: column/columns
+GET: column/column
 ----------
 
 -  Purpose: **Get all columns information for a given project**
