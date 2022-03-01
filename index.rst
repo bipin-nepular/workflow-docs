@@ -25,7 +25,7 @@ Documentation of API endpoints.
     subtask
     subtask_time_tracking
     comment
-    action
+    actions
     category
     external_task_link
     internal_task_link
