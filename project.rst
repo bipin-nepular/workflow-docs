@@ -282,7 +282,7 @@ Request example:
 .. code:: json
 
     {
-      "project_id" : 1,
+      
      "name": "PHP client update"}
     
 
