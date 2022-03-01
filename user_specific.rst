@@ -233,7 +233,10 @@ Request example:
 
 .. code:: json
 
-     [ "my project" ]
+     {
+     "name": "New Project",
+     "description" : "New Project is awesome description"
+     }
 
 Response example:
 
